@@ -1,0 +1,14 @@
+release_tag = "ram-napkin-race-v0.9.0"
+asset = "ram-napkin-race-0.9.0.zip"
+cover = "cover.jpg"
+
+[details]
+id = "ram-napkin-race"
+name = "Ram Napkin Race"
+version = "0.9.0"
+summary = "Drive colourful rams across a rolling road-carpet arena."
+author = "overbait"
+updated = "2026-09-28"
+min_garrison = "0.1.0"
+description = "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\n\nEnabling the bundle does not select its map or tuning in the lobby."
+changelog = "0.9.0 / 2026-09-28\nRenamed map and tuning display names; added release metadata. Gameplay resources and scripts are unchanged."

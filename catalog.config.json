@@ -1,0 +1,5 @@
+{
+  "repository": "AOE-Garrison/garrison-mod-catalog",
+  "private": true,
+  "source": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/catalog.json?ref=main"
+}
