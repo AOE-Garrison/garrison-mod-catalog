@@ -19,12 +19,12 @@
         "tuning"
       ],
       "package": {
-        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/releases/assets/596487680",
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/overfootball-v0.8.1/overfootball-0.8.1.zip",
         "sha256": "b3436230e8f3bcd820088c7a74ae5a48d648c76f40308407108c7eb2e09a201a",
         "size": 88210159
       },
       "cover": {
-        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/mods/overfootball/cover.jpg?ref=50abac537087ed38b1d83f80b5c9044c994ebcae",
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/818747924f828c6a4095bf36fc22ed3150173d87/mods/overfootball/cover.jpg",
         "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
         "size": 326561
       }
@@ -47,12 +47,12 @@
         "tuning"
       ],
       "package": {
-        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/releases/assets/596437982",
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ram-napkin-race-v0.9.2/ram-napkin-race-0.9.2.zip",
         "sha256": "3108246b9e384960ecc15910bf757475419076897e0c0e7687e9ce70c12e0f26",
         "size": 5753446
       },
       "cover": {
-        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/mods/ram-napkin-race/cover.jpg?ref=50abac537087ed38b1d83f80b5c9044c994ebcae",
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/818747924f828c6a4095bf36fc22ed3150173d87/mods/ram-napkin-race/cover.jpg",
         "sha256": "58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29",
         "size": 316699
       }
