@@ -39,4 +39,4 @@ Press **Sync**. Garrison uses the existing GitHub CLI login and does not save a 
 
 For diagnostics, `garrison-play catalog-sync <source-url>` uses the same implementation.
 
-[Подробная инструкция на русском](docs/ADDING_MODS.ru.md).
+[Detailed author instructions](docs/ADDING_MODS.md).

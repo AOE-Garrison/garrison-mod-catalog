@@ -2,7 +2,8 @@
 
 This is the private AOE-Garrison mod catalog, separate from product source.
 Keep one labelled `mod.toml` and an optional cover in each `mods/<stable-id>/`.
-See README.md and docs/ADDING_MODS.ru.md for the author workflow.
+See README.md and docs/ADDING_MODS.md for the author workflow.
+Write repository documentation and contributor instructions in English.
 
 Keep package ZIPs in Releases. Never commit SGA files, Blender scenes, secrets,
 tokens, proprietary source assets or machine-specific paths. Do not change
