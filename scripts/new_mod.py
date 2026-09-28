@@ -4,7 +4,10 @@ import datetime
 import json
 from pathlib import Path
 
-from build_catalog import validate_key
+try:
+    from .build_catalog import validate_key
+except ImportError:
+    from build_catalog import validate_key
 
 
 def create(root: Path, mod_id: str, name: str, author: str = '') -> Path:

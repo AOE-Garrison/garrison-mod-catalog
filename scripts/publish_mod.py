@@ -5,8 +5,12 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-from build_catalog import read_metadata, validate_key
-from prepare_mod import prepare
+try:
+    from .build_catalog import read_metadata, validate_key
+    from .prepare_mod import prepare
+except ImportError:
+    from build_catalog import read_metadata, validate_key
+    from prepare_mod import prepare
 
 
 def publish(root: Path, mod_id: str, package: Path) -> None:
