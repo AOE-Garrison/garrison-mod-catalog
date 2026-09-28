@@ -1,1 +1,61 @@
-{"schema":"garrison.catalog/v1","mods":[]}
+{
+  "schema": "garrison.catalog/v1",
+  "mods": [
+    {
+      "details": {
+        "id": "overfootball",
+        "name": "OverFootball",
+        "version": "0.8.0",
+        "summary": "Football in a stadium: control your players, pass and shoot.",
+        "author": "overbait",
+        "updated": "2026-09-28",
+        "min_garrison": "0.1.0",
+        "description": "How to launch\n1. Enable OverFootball in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): OverFootball map.\n4. Tuning Pack: OverFootball tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
+        "changelog": "0.8.0 / 2026-09-28\nRenamed map and tuning display names; added release metadata. Gameplay resources and scripts are unchanged."
+      },
+      "bundle_key": "football_45_bundle",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/releases/assets/596049556",
+        "sha256": "41c194750569bba8a121841e5d419a930dc1bd2a1af5811cf2a3cf83ef1f7ba2",
+        "size": 269500554
+      },
+      "cover": {
+        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/mods/overfootball/cover.jpg?ref=d80985c6c549d29b6eadff992f69af8207540a67",
+        "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
+        "size": 326561
+      }
+    },
+    {
+      "details": {
+        "id": "ram-napkin-race",
+        "name": "Ram Napkin Race",
+        "version": "0.9.0",
+        "summary": "Drive colourful rams across a rolling road-carpet arena.",
+        "author": "overbait",
+        "updated": "2026-09-28",
+        "min_garrison": "0.1.0",
+        "description": "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
+        "changelog": "0.9.0 / 2026-09-28\nRenamed map and tuning display names; added release metadata. Gameplay resources and scripts are unchanged."
+      },
+      "bundle_key": "ram_napkin_race",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/releases/assets/596051839",
+        "sha256": "7fd68e5a8fdb395cf9c7edaa60f27a79f9e37cb0f39477d87740264371d97fe1",
+        "size": 5427074
+      },
+      "cover": {
+        "url": "https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/mods/ram-napkin-race/cover.jpg?ref=d80985c6c549d29b6eadff992f69af8207540a67",
+        "sha256": "58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29",
+        "size": 316699
+      }
+    }
+  ]
+}
