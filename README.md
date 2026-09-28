@@ -1,7 +1,8 @@
 # Garrison mod catalog
 
-Private catalog for [Garrison](https://github.com/AOE-Garrison/aoe4-modding-kit).
-Organization owners already have administrator access; no separate invitation is needed.
+Public mod catalog for Garrison. The Garrison product source repository remains
+private. Players need no GitHub account, repository invitation or GitHub CLI
+to browse this catalog or download its mods.
 
 ```text
 mods/
@@ -16,7 +17,7 @@ catalog.json        generated index; do not edit by hand
 
 1. Install Python 3.11+ and GitHub CLI. Run `gh auth login` with a repository member account.
 2. Run `python scripts/new_mod.py my-mod --name "My Mod" --author "Author"`.
-3. Fill `mods/my-mod/mod.toml`. Put `cover.jpg` or `cover.png` alongside it and set `cover = "cover.jpg"`. No filename prefix is required. Use 1600×600, up to 4 MiB.
+3. Fill `mods/my-mod/mod.toml`. Put `cover.jpg` or `cover.png` alongside it and set `cover = "cover.jpg"`. No filename prefix is required. Use 1600Г—600, up to 4 MiB.
 4. Commit and push the metadata and cover to `main`.
 5. Publish the prepared bundle: `python scripts/publish_mod.py my-mod path/to/bundle.zip`.
 6. Check the **Build mod catalog** Actions run. It verifies every archive/hash and commits the new index. A failed build keeps the previous index intact.
@@ -29,13 +30,22 @@ A metadata push before its release exists can fail validation; publishing the re
 
 ## Connect Garrison
 
-Use the Garrison build with private catalog support. Sign in once with `gh auth login` on the player's computer. In **Mods → Catalog → Source**, enter:
+Open **Mods > Catalog > Sync** in Garrison. Current builds already have this
+address configured. In an older build, paste it once under **Source**:
 
 ```text
-https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/catalog.json?ref=main
+https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json
 ```
 
-Press **Sync**. Garrison uses the existing GitHub CLI login and does not save a token in its catalog cache. Access is limited to repository members while this repository is private. Index, covers and downloads use the authenticated GitHub API; storage redirects receive no GitHub token.
+The index, covers and mod ZIPs are public HTTPS downloads. Garrison remembers
+the successful source. Sync refreshes the catalog; the download/update button
+installs a selected mod and verifies its published size and SHA-256. No player
+sign-in, GitHub CLI or organization membership is required. GitHub authentication
+is still required for maintainers who publish releases and edit this repository.
+
+Obtain the Garrison player ZIP from the maintainer or the private product
+repository if you have access. Making this mod catalog public does not make
+product source or product releases public.
 
 For diagnostics, `garrison-play catalog-sync <source-url>` uses the same implementation.
 

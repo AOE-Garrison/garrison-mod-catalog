@@ -65,18 +65,23 @@ an existing release asset: even a correction to a published ZIP needs a new vers
 
 ## Access and connection
 
-This repository is private. Bjorn and overbait inherit admin access as
-AOE-Garrison owners. On another computer, install GitHub CLI and run
-`gh auth login` with an account that has access to this repository.
-Never put tokens in TOML/JSON files or distribute them with mods.
+This catalog and its release ZIPs are public. Only maintainers need repository
+write access and GitHub authentication for the publishing commands above.
+The main Garrison product repository remains private. Downloading Garrison
+and accessing its source are separate from downloading mods.
 
-In Garrison, open **Mods > Catalog > Source** and use:
+Players open **Mods > Catalog > Sync**. The default catalog address is:
 
 ```text
-https://api.github.com/repos/AOE-Garrison/garrison-mod-catalog/contents/catalog.json?ref=main
+https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json
 ```
 
-Press **Sync**. The catalog changes only after an explicit sync; installing
-or updating a mod is a separate action. Installed catalog mods are managed
-on their Catalog cards and do not also appear in Local. The catalog does not
+No GitHub account, GitHub CLI, invitation or token is required. If an older
+Garrison build uses another source, paste this address once under **Source**.
+The successful address is remembered. Sync refreshes metadata and covers;
+installing or updating a mod remains a separate action. The catalog does not
 select the map or tuning pack in the game lobby.
+
+Published package bytes and hashes are unchanged by the visibility switch.
+The generated index uses direct release download URLs and commit-pinned public
+cover URLs. Do not put credentials in any URL or catalog metadata.

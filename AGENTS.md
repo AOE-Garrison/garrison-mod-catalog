@@ -1,6 +1,6 @@
 # Catalog maintenance
 
-This is the private AOE-Garrison mod catalog, separate from product source.
+This is the public AOE-Garrison mod catalog, separate from private product source.
 Keep one labelled `mod.toml` and an optional cover in each `mods/<stable-id>/`.
 See README.md and docs/ADDING_MODS.md for the author workflow.
 Write repository documentation and contributor instructions in English.
