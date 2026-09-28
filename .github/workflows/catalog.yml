@@ -1,5 +1,11 @@
 name: Build mod catalog
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    branches: [main]
+    paths: ['mods/**', 'scripts/**', '.github/workflows/catalog.yml']
 permissions:
   contents: write
 concurrency:
