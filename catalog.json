@@ -3,6 +3,38 @@
   "mods": [
     {
       "details": {
+        "id": "modding-showcase",
+        "name": "Modding Showcase",
+        "version": "0.1.0",
+        "summary": "Meet Shrek and ten Wizard Sheep, then build the Cow House on Dry Arabia.",
+        "author": "overbait",
+        "updated": "2026-09-29",
+        "min_garrison": "0.1.0",
+        "content_types": [
+          "game-mode",
+          "tuning-pack"
+        ],
+        "description": "A playable collection of custom characters and building art. At the centre of the map you receive Shrek, ten Wizard Sheep, a scout and a special builder. Select the builder, open the first-age build menu and use House to construct the Cow House. Shrek has manual movement, combat and a dance ability; the scenario does not issue automatic combat or dance orders.\n\nYour normal civilisation start is retained, with eight extra villagers, five spearmen, 600 food, 200 wood and 250 gold. With one human player, you control both the starting settlement and the centre group.\n\nHow to launch\n1. Enable Modding Showcase in Garrison and press Play.\n2. Create a solo custom match with one human and an AI.\n3. Map: ordinary Dry Arabia.\n4. Game Mode: Modding Showcase.\n5. Tuning Pack: Modding Showcase Tuning.\n6. Start the match and look at the centre of the map after a few seconds.\n\nThis bundle provides a Game Mode and Tuning Pack; do not choose a Crafted map. Enabling it in Garrison does not select these lobby fields. Use only this showcase bundle for the test. Town-centre recruitment of showcase units is not included. Multiplayer is not supported.\n",
+        "changelog": "0.1.0 / 2026-09-29\nFirst catalog release of the complete Modding Showcase. Updated distribution for the shared Garrison Player, with a current bundle manifest, Game Mode + Tuning card labels, launch instructions and a Blender-rendered cover. The complete scene was accepted in a solo match with the current Garrison on 2026-09-29. The previously accepted scenario and cooked models are preserved; no separate showcase DLL or launcher is included.\n"
+      },
+      "bundle_key": "modding_showcase_full",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/modding-showcase-v0.1.0/modding-showcase-0.1.0.zip",
+        "sha256": "8b1ed5fab107a5367a871ddc9deb826573899c3eeda82a9b12b4dc6cae7a96a8",
+        "size": 45140306
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/92fabfbb464d9e253e3d70a86d0168c119155dba/mods/modding-showcase/cover.jpg",
+        "sha256": "0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9",
+        "size": 217700
+      }
+    },
+    {
+      "details": {
         "id": "overfootball",
         "name": "OverFootball",
         "version": "0.8.2",
@@ -10,6 +42,10 @@
         "author": "overbait",
         "updated": "2026-09-29",
         "min_garrison": "0.1.0",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
         "description": "How to launch\n1. Enable OverFootball in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): OverFootball map.\n4. Tuning Pack: OverFootball tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: select a footballer; R toggles ball follow, T cheers. The follow checkbox remains available. Q/W/E retain their previous actions.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
         "changelog": "0.8.2 / 2026-09-29\nFixed malformed line endings in the tuning localization table, which prevented its names and tooltips from loading. Gameplay, camera behavior, art and audio are unchanged. Select OverFootball map together with OverFootball tuning; Ram Napkin Race tuning is not compatible with the football map."
       },
@@ -24,7 +60,7 @@
         "size": 87884883
       },
       "cover": {
-        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/e6adc49a7599037dd3c7f230907bfb5f033e4895/mods/overfootball/cover.jpg",
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/92fabfbb464d9e253e3d70a86d0168c119155dba/mods/overfootball/cover.jpg",
         "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
         "size": 326561
       }
@@ -38,6 +74,10 @@
         "author": "overbait",
         "updated": "2026-09-29",
         "min_garrison": "0.1.0",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
         "description": "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: right click to drive; S to brake; Q to strike. Select your ram and press W to follow your ram or E to follow the active ram. Press the same key again for free camera.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
         "changelog": "0.9.8 / 2026-09-29\nNew W/E icons and a shuffled pool of 24 AI nicknames. Smooth camera follow now holds its position while the target falls off the arena and resumes after respawn. Quicker starts with unchanged cruising speed. Light variants load with the map to improve first activation. All changes accepted in local play; 75 automated checks passed."
       },
@@ -52,7 +92,7 @@
         "size": 5451250
       },
       "cover": {
-        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/e6adc49a7599037dd3c7f230907bfb5f033e4895/mods/ram-napkin-race/cover.jpg",
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/92fabfbb464d9e253e3d70a86d0168c119155dba/mods/ram-napkin-race/cover.jpg",
         "sha256": "58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29",
         "size": 316699
       }
