@@ -10,6 +10,7 @@ summary = "Meet Shrek and ten Wizard Sheep, then build the Cow House on Dry Arab
 author = "overbait"
 updated = "2026-09-29"
 min_garrison = "0.1.0"
+content_types = ["game-mode", "tuning-pack"]
 description = """
 A playable collection of custom characters and building art. At the centre of the map you receive Shrek, ten Wizard Sheep, a scout and a special builder. Select the builder, open the first-age build menu and use House to construct the Cow House. Shrek has manual movement, combat and a dance ability; the scenario does not issue automatic combat or dance orders.
 
@@ -27,5 +28,5 @@ This bundle provides a Game Mode and Tuning Pack; do not choose a Crafted map. E
 """
 changelog = """
 0.1.0 / 2026-09-29
-First catalog release of the complete Modding Showcase. Updated distribution for the shared Garrison Player, with a current bundle manifest, launch instructions and a Blender-rendered cover. The previously accepted scenario and cooked models are preserved; no separate showcase DLL or launcher is included.
+First catalog release of the complete Modding Showcase. Updated distribution for the shared Garrison Player, with a current bundle manifest, Game Mode + Tuning card labels, launch instructions and a Blender-rendered cover. The complete scene was accepted in a solo match with the current Garrison on 2026-09-29. The previously accepted scenario and cooked models are preserved; no separate showcase DLL or launcher is included.
 """

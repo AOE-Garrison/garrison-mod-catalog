@@ -8,6 +8,7 @@ to browse this catalog or download its mods.
 mods/
   overfootball/      mod.toml + cover.jpg
   ram-napkin-race/   mod.toml + cover.jpg
+  modding-showcase/  mod.toml + cover.jpg
 templates/mod.toml  labelled form for the next mod
 scripts/            create, prepare, publish and validate
 catalog.json        generated index; do not edit by hand

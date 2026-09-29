@@ -34,11 +34,18 @@ Fill in the generated `mods/my-mod/mod.toml`:
 | `author` | The author's name |
 | `updated` | The publication date in `YYYY-MM-DD` format |
 | `min_garrison` | The minimum supported Garrison version |
+| `content_types` | Optional distinct components: `map`, `game-mode`, `tuning-pack` |
 | `description` | Details and launch instructions shown by the `i` button |
 | `changelog` | Changes in this release |
 
 Include the in-game map and tuning names in the launch instructions.
-The MAP/TUNING content type is read automatically from `mod.bundle.json`.
+Set `content_types` under `[details]` for the types shown before installation.
+For example, Modding Showcase uses `["game-mode", "tuning-pack"]`, while
+OverFootball and Ram Napkin Race use `["map", "tuning-pack"]`. A single type or
+any combination is supported. An installed card uses the archive components.
+The bundle manifest retains its existing roles; a `map` member may supply only
+a Game Mode. These labels do not choose lobby settings. Older metadata without
+`content_types` remains valid and falls back to the manifest role labels.
 
 Add the cover, then commit and push the mod folder:
 

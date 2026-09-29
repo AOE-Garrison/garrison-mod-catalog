@@ -109,8 +109,14 @@ def validate_key(value: str) -> None:
 
 def validate_details(details: dict) -> None:
     required = {'id', 'name', 'version', 'summary', 'updated', 'min_garrison'}
-    if not required <= details.keys() or details.keys() - (required | {'description', 'author', 'changelog'}):
+    if not required <= details.keys() or details.keys() - (required | {'description', 'author', 'changelog', 'content_types'}):
         raise ValueError('Missing or unknown mod details')
+    if 'content_types' in details:
+        types = details['content_types']
+        if (not isinstance(types, list) or len(types) > 3
+                or any(t not in ('map', 'game-mode', 'tuning-pack') for t in types)
+                or len(set(types)) != len(types)):
+            raise ValueError('content_types must list distinct map, game-mode or tuning-pack components')
     validate_key(details['id'])
     for key, limit in [('name', 100), ('summary', 180), ('description', 8000), ('author', 100), ('changelog', 8000)]:
         value = details.get(key, '')

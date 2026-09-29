@@ -10,5 +10,6 @@ summary = "Drive colourful rams across a rolling road-carpet arena."
 author = "overbait"
 updated = "2026-09-29"
 min_garrison = "0.1.0"
+content_types = ["map", "tuning-pack"]
 description = "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: right click to drive; S to brake; Q to strike. Select your ram and press W to follow your ram or E to follow the active ram. Press the same key again for free camera.\n\nEnabling the bundle does not select its map or tuning in the lobby."
 changelog = "0.9.8 / 2026-09-29\nNew W/E icons and a shuffled pool of 24 AI nicknames. Smooth camera follow now holds its position while the target falls off the arena and resumes after respawn. Quicker starts with unchanged cruising speed. Light variants load with the map to improve first activation. All changes accepted in local play; 75 automated checks passed."

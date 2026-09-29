@@ -13,6 +13,9 @@ summary = "One short sentence about playing this mod."
 author = ""
 updated = "2026-09-28"
 min_garrison = "0.1.0"
+# Optional card types: map, game-mode, tuning-pack; any distinct combination.
+# Use the components this release actually provides, not its bundle roles.
+# content_types = ["game-mode", "tuning-pack"]
 description = """
 How to play
 1. Install and enable the mod in Garrison.
