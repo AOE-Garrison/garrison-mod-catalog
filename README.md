@@ -1,53 +1,28 @@
 # Garrison mod catalog
 
-Public mod catalog for Garrison. The Garrison product source repository remains
-private. Players need no GitHub account, repository invitation or GitHub CLI
-to browse this catalog or download its mods.
+Public mod catalog for Garrison. Players can browse and download without a GitHub account. Maintainers publish mod ZIPs through GitHub Releases; ZIPs and SGA files never belong in Git history.
 
-```text
-mods/
-  overfootball/      mod.toml + cover.jpg
-  ram-napkin-race/   mod.toml + cover.jpg
-  modding-showcase/  mod.toml + cover.jpg
-templates/mod.toml  labelled form for the next mod
-scripts/            create, prepare, publish and validate
-catalog.json        generated index; do not edit by hand
-```
+Each release ZIP contains `garrison.json`, its referenced archives and an optional cover beside the manifest. The manifest supplies all card details. `catalog.config.json` selects the version to list for each mod ID; `catalog.json` and `covers/` are generated.
 
-## Add a mod
+## Publish a mod
 
-1. Install Python 3.11+ and GitHub CLI. Run `gh auth login` with a repository member account.
-2. Run `python scripts/new_mod.py my-mod --name "My Mod" --author "Author"`.
-3. Fill `mods/my-mod/mod.toml`. Put `cover.jpg` or `cover.png` alongside it and set `cover = "cover.jpg"`. No filename prefix is required. Use 1600Г—600, up to 4 MiB.
-4. Commit and push the metadata and cover to `main`.
-5. Publish the prepared bundle: `python scripts/publish_mod.py my-mod path/to/bundle.zip`.
-6. Check the **Build mod catalog** Actions run. It verifies every archive/hash and commits the new index. A failed build keeps the previous index intact.
+1. In Blender, fill the Package details and press **Package for Garrison**.
+2. From this repository, run `python scripts/publish_mod.py path/to/<id>-<version>.zip`.
+3. Review, commit and push the updated `catalog.config.json`.
+4. Check the **Build mod catalog** workflow, then Sync in Garrison.
 
-The source ZIP must contain exactly one `mod.bundle.json` and its referenced SGA files. The script inserts the matching description and cover. ZIPs belong in GitHub Releases, never in Git history.
-
-For updates, keep the folder, `details.id`, bundle key and member keys stable. Increase `version`, `release_tag` and `asset`; update the date and changelog. Published releases are immutable: do not replace a ZIP under the same version. Use a new version to correct it.
-
-A metadata push before its release exists can fail validation; publishing the release triggers another run. Alternatively publish after preparing the metadata locally and dispatch the workflow once everything is present.
+The publisher validates archive paths, hashes, manifest details and covers before creating `<id>-v<version>` with asset `<id>-<version>.zip`. Existing releases are never overwritten. Raise the semantic version for every update, and keep bundle and member keys stable.
 
 ## Connect Garrison
 
-Open **Mods > Catalog > Sync** in Garrison. Current builds already have this
-address configured. In an older build, paste it once under **Source**:
+Open **Mods > Catalog > Sync**. The default source is:
 
 ```text
 https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json
 ```
 
-The index, covers and mod ZIPs are public HTTPS downloads. Garrison remembers
-the successful source. Sync refreshes the catalog; the download/update button
-installs a selected mod and verifies its published size and SHA-256. No player
-sign-in, GitHub CLI or organization membership is required. GitHub authentication
-is still required for maintainers who publish releases and edit this repository.
+Sync refreshes the catalog. Installing or updating a selected mod verifies its ZIP size and SHA-256. Enabling a mod does not choose its map, Game Mode or Tuning Pack in the lobby; follow that mod's launch instructions.
 
-Obtain the Garrison player ZIP from the maintainer or the private product
-repository if you have access. Making this mod catalog public does not make
-product source or product releases public.
+The Garrison product repository and product distribution are separate from this public catalog.
 
-For diagnostics, `garrison-play catalog-sync <source-url>` uses the same implementation.
-
-[Detailed author instructions](docs/ADDING_MODS.md).
+[Author instructions](docs/ADDING_MODS.md) include the transition from older catalog releases.

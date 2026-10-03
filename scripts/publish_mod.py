@@ -1,50 +1,65 @@
-"""Publish a new immutable release from committed metadata and a local bundle ZIP."""
+"""Publish a mod ZIP Garrison packaged as a new release, and list it in catalog.config.json.
+
+python scripts/publish_mod.py path/to/<id>-<version>.zip
+
+The ZIP is checked as the builder checks it; its garrison.json gives the id,
+version and release notes. The release is ``<id>-v<version>`` with the asset
+``<id>-<version>.zip``, created with the GitHub CLI and never overwritten.
+Then ``mods.<id>`` in catalog.config.json is set to the version: commit and
+push that change, and the catalog workflow adds the release to catalog.json.
+"""
+from __future__ import annotations
+
 import argparse
 import json
+import os
 from pathlib import Path
+import shutil
 import subprocess
 import tempfile
 
 try:
-    from .build_catalog import read_metadata, validate_key
-    from .prepare_mod import prepare
+    from .build_catalog import CONFIG_NAME, inspect_package, package_name, read_config, release_tag, version_order
 except ImportError:
-    from build_catalog import read_metadata, validate_key
-    from prepare_mod import prepare
+    from build_catalog import CONFIG_NAME, inspect_package, package_name, read_config, release_tag, version_order
 
 
-def publish(root: Path, mod_id: str, package: Path) -> None:
-    validate_key(mod_id)
-    config = json.loads((root / 'catalog.config.json').read_text())
-    repository = config['repository']
-    metadata = root / 'mods' / mod_id / 'mod.toml'
-    data = read_metadata(metadata)
-    if data['details']['id'] != mod_id:
-        raise ValueError('Folder name must equal details.id')
-    dirty = subprocess.check_output(['git', 'status', '--porcelain', '--', f'mods/{mod_id}'], cwd=root)
-    if dirty.strip():
-        raise ValueError('Commit and push the mod metadata and cover before publishing')
-    head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
-    remote = subprocess.check_output(['gh', 'api', f'repos/{repository}/commits/main', '--jq', '.sha'], text=True).strip()
-    if head != remote:
-        raise ValueError('Checkout must match published main before publishing a release')
+def publish(root: Path, package: Path, *, run=subprocess.run) -> dict:
+    """Create the release for ``package`` and list its version; returns the new config."""
+    config = read_config(root)
+    details, _roles, _cover = inspect_package(package)
+    mod_id, version = details['id'], details['version']
+    mods = dict(config['mods'])
+    listed = next((key for key in mods if key.casefold() == mod_id.casefold()), None)
+    if listed is not None:
+        if listed != mod_id:
+            raise ValueError(f'The catalog lists this mod as {listed}; keep its id unchanged')
+        if version_order(version) <= version_order(mods[listed]):
+            raise ValueError(f'{mod_id} {mods[listed]} is listed; publish a newer version than that')
+    tag, asset = release_tag(mod_id, version), package_name(mod_id, version)
     with tempfile.TemporaryDirectory(prefix='garrison-publish-') as temp:
-        ready = Path(temp) / data['asset']
-        if ready.parent != Path(temp) or ready.suffix.lower() != '.zip':
-            raise ValueError('asset must be a ZIP filename without directories')
-        prepare(metadata, package.resolve(strict=True), ready)
+        ready = Path(temp) / asset
+        shutil.copyfile(package, ready)
         notes = Path(temp) / 'release-notes.md'
-        details = data['details']
-        notes.write_text(details['summary'] + '\n\n' + details.get('description', '') + '\n', encoding='utf-8')
-        # No --clobber: existing releases/assets must never be overwritten.
-        subprocess.run(['gh', 'release', 'create', data['release_tag'], str(ready), '--repo', repository,
-                        '--target', head, '--title', f"{details['name']} {details['version']}",
-                        '--notes-file', str(notes)], check=True)
+        notes.write_text('\n\n'.join(part for part in (details['summary'], details.get('description', ''),
+                                                       details.get('changelog', '')) if part.strip()) + '\n',
+                         encoding='utf-8')
+        # No --clobber: an existing release or asset is never overwritten.
+        run(['gh', 'release', 'create', tag, str(ready), '--repo', config['repository'],
+             '--title', f"{details['name']} {version}", '--notes-file', str(notes)], check=True)
+    mods[mod_id] = version
+    config = {**config, 'mods': dict(sorted(mods.items(), key=lambda item: item[0].casefold()))}
+    target = root / CONFIG_NAME
+    temporary = target.with_name(target.name + '.tmp')
+    temporary.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    os.replace(temporary, target)
+    return config
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('id')
-    parser.add_argument('package', type=Path)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('package', type=Path, help='the mod ZIP Garrison packaged')
+    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
-    publish(Path(__file__).resolve().parents[1], args.id, args.package)
+    publish(args.root, args.package.resolve(strict=True))
+    print(f'Listed in {CONFIG_NAME}. Commit and push it; the catalog workflow then builds catalog.json.')

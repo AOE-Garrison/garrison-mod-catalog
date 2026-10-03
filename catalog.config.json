@@ -1,5 +1,10 @@
 {
   "repository": "AOE-Garrison/garrison-mod-catalog",
   "private": false,
-  "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json"
+  "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json",
+  "mods": {
+    "football_45_bundle": "0.8.3",
+    "modding_showcase_full": "0.1.1",
+    "ram_napkin_race": "0.9.9"
+  }
 }
