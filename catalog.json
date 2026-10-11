@@ -5,13 +5,13 @@
       "details": {
         "id": "football_45_bundle",
         "name": "OverFootball",
-        "version": "0.8.3",
-        "summary": "Football in a stadium: control your players, pass and shoot.",
+        "version": "0.9.0",
+        "summary": "Stadium football with lobby teams and individual player control.",
+        "description": "Play stadium football with one to four participants per team. Each team has seven footballers; select a free teammate to control, then switch to another when needed.\n\nHow to launch\n1. Enable OverFootball in Garrison and press Play.\n2. In a custom lobby, select OverFootball map and OverFootball tuning. Keep the regular game mode.\n3. Choose Team 1 or Team 2 in the AoE IV lobby and close unused slots.\n4. Every human presses READY on the match setup screen.\n\nControls: right click to move; Q for a weak kick, W for a strong kick, E to boost, R to follow the ball, T to cheer.\n\nThe top Stamina Info button toggles both team panels. Stamina bars show the controlling participant's lobby colour. Team kits stay blue/red in team play; 1v1 keeps the chosen lobby colours.\n\nFor solo practice, use one human and three to seven AI slots. Practice participants yield control when you select their footballer.",
         "author": "overbait",
-        "updated": "2026-10-03",
+        "updated": "2026-10-12",
         "min_garrison": "0.1.0",
-        "description": "How to launch\n1. Enable OverFootball in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): OverFootball map.\n4. Tuning Pack: OverFootball tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: select a footballer; R toggles ball follow, T cheers. The follow checkbox remains available. Q/W/E retain their previous actions.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
-        "changelog": "0.8.3 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved. Stadium crowd resources use a shared payload while retaining all crowd entries.",
+        "changelog": "0.9.0\n- Lobby teams with up to four participants per side and individual footballer control.\n- Responsive selection and movement, with separate solo practice participants.\n- Controller-coloured stamina bars and hidden-by-default Stamina Info panels.\n- Consistent team kit colours and preserved 1v1 lobby colours.\n- Removed the attack cursor over opponents and repaired match cleanup.",
         "content_types": [
           "map",
           "tuning-pack"
@@ -23,9 +23,9 @@
         "tuning"
       ],
       "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.8.3/football_45_bundle-0.8.3.zip",
-        "sha256": "7e9d28c221875abc5b27862fcef15c0c6a3b17c7f51999178bd8bc20b1a8341b",
-        "size": 87884672
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.0/football_45_bundle-0.9.0.zip",
+        "sha256": "fd2d34ffbade86f0a32dea8ed71950b2664b73d946aa9bd3aa1f0cb62303dae8",
+        "size": 87895054
       },
       "cover": {
         "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c.jpg",
