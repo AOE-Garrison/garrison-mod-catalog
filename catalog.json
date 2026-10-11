@@ -5,13 +5,13 @@
       "details": {
         "id": "football_45_bundle",
         "name": "OverFootball",
-        "version": "0.9.0",
+        "version": "0.9.1",
         "summary": "Stadium football with lobby teams and individual player control.",
         "description": "Play stadium football with one to four participants per team. Each team has seven footballers; select a free teammate to control, then switch to another when needed.\n\nHow to launch\n1. Enable OverFootball in Garrison and press Play.\n2. In a custom lobby, select OverFootball map and OverFootball tuning. Keep the regular game mode.\n3. Choose Team 1 or Team 2 in the AoE IV lobby and close unused slots.\n4. Every human presses READY on the match setup screen.\n\nControls: right click to move; Q for a weak kick, W for a strong kick, E to boost, R to follow the ball, T to cheer.\n\nThe top Stamina Info button toggles both team panels. Stamina bars show the controlling participant's lobby colour. Team kits stay blue/red in team play; 1v1 keeps the chosen lobby colours.\n\nFor solo practice, use one human and three to seven AI slots. Practice participants yield control when you select their footballer.",
         "author": "overbait",
         "updated": "2026-10-12",
         "min_garrison": "0.1.0",
-        "changelog": "0.9.0\n- Lobby teams with up to four participants per side and individual footballer control.\n- Responsive selection and movement, with separate solo practice participants.\n- Controller-coloured stamina bars and hidden-by-default Stamina Info panels.\n- Consistent team kit colours and preserved 1v1 lobby colours.\n- Removed the attack cursor over opponents and repaired match cleanup.",
+        "changelog": "Larger goals: expanded frames, animated nets and goal area. Net reactions remain inside the boards.",
         "content_types": [
           "map",
           "tuning-pack"
@@ -23,9 +23,9 @@
         "tuning"
       ],
       "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.0/football_45_bundle-0.9.0.zip",
-        "sha256": "fd2d34ffbade86f0a32dea8ed71950b2664b73d946aa9bd3aa1f0cb62303dae8",
-        "size": 87895054
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.1/football_45_bundle-0.9.1.zip",
+        "sha256": "e291e4f3005ef90af3a8740eb8bede00de7973ad734c0864f75bfb1d1b697ab9",
+        "size": 87823991
       },
       "cover": {
         "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c.jpg",
