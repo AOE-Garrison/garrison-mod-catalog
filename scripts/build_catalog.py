@@ -2,10 +2,11 @@
 
 ``catalog.config.json`` names the repository and, under ``mods``, each mod's id
 and the version to list. That version's GitHub release is ``<id>-v<version>``
-with the asset ``<id>-<version>.zip``, the package Garrison writes. Everything
-the catalog says about a mod comes from that ZIP's ``garrison.json``: its
+with the asset ``<id>-<version>.zip``, the package Garrison writes. Release metadata
+comes from that ZIP's ``garrison.json``: its
 details, its archives' roles and its cover, which is copied to
-``covers/<sha256>.<ext>`` beside catalog.json so the index can link it.
+``covers/<sha256>.<ext>`` beside catalog.json so the index can link it. Optional
+publisher categories come from the config's separate ``categories`` map.
 
 The build is incremental. An entry is reused unchanged when the previous
 catalog.json lists the same release asset (address and size) and GitHub's
@@ -39,6 +40,7 @@ MANIFEST_SCHEMA = 'garrison.mod/v1'
 CATALOG_SCHEMA = 'garrison.catalog/v1'
 COVERS = 'covers'
 COVER_SUFFIXES = ('.png', '.jpg', '.jpeg', '.webp')
+CATEGORIES = ('civilizations', 'games-scenarios', 'enhancements', 'maps')
 VERSION = r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?'
 
 
@@ -215,8 +217,8 @@ def validate_details(details: dict) -> None:
 def read_config(root: Path) -> dict:
     """``catalog.config.json``: the repository and the version of each listed mod."""
     data = json.loads((root / CONFIG_NAME).read_text(encoding='utf-8-sig'))
-    if not isinstance(data, dict) or set(data) - {'repository', 'private', 'source', 'mods'}:
-        raise ValueError(f'{CONFIG_NAME} takes repository, private, source and mods')
+    if not isinstance(data, dict) or set(data) - {'repository', 'private', 'source', 'mods', 'categories'}:
+        raise ValueError(f'{CONFIG_NAME} takes repository, private, source, mods and categories')
     if not isinstance(data.get('repository'), str) or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',
                                                                        data['repository']):
         raise ValueError('repository must be ORG/REPO')
@@ -234,6 +236,11 @@ def read_config(root: Path) -> dict:
         if mod_id.casefold() in folded:
             raise ValueError('Duplicate catalog ID')
         folded.add(mod_id.casefold())
+    categories = data.get('categories', {})
+    if not isinstance(categories, dict) or any(
+        key not in mods or value not in CATEGORIES for key, value in categories.items()
+    ):
+        raise ValueError('categories must map listed mod ids to civilizations, games-scenarios, enhancements or maps')
     return data
 
 
@@ -363,6 +370,11 @@ def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | No
         keys.add(entry['bundle_key'].casefold())
         if entry.get('cover'):
             covers[PurePosixPath(urllib.parse.urlsplit(entry['cover']['url']).path).name] = True
+        # Classification can change without repackaging or downloading the ZIP.
+        entry = dict(entry)
+        entry.pop('category', None)
+        if mod_id in config.get('categories', {}):
+            entry['category'] = config['categories'][mod_id]
         mods.append(entry)
     result = {'schema': CATALOG_SCHEMA, 'mods': mods}
     encoded = (json.dumps(result, ensure_ascii=False, indent=2) + '\n').encode('utf-8')

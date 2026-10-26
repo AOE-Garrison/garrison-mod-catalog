@@ -5,13 +5,45 @@ Use Python 3.11+ and an authenticated GitHub CLI account with repository write a
 Garrison's **Package for Garrison** creates `<id>-<version>.zip`. Its `garrison.json` contains the bundle key, archive member keys, roles, SHA-256 hashes, mod details and optional cover filename. `details.id` must equal the bundle key. Set the name, summary, author, date, description, changelog, content types and optional cover in the package workflow. Include concrete lobby selections in the description. Content labels do not select lobby settings.
 
 ```powershell
-python scripts/publish_mod.py path/to/my-mod-1.0.0.zip
+python scripts/publish_mod.py path/to/my-mod-1.0.0.zip --category games-scenarios
 git add catalog.config.json
 git commit -m "List My Mod 1.0.0"
 git push origin main
 ```
 
 The publisher creates a new release and updates the selected version. The workflow downloads each new package, verifies its complete manifest and archive hashes, copies the cover into `covers/` by content hash, and generates `catalog.json`. A failed validation preserves the prior index. Repeated builds reuse entries only when GitHub's asset digest, size and address still match.
+
+## Choose a category
+
+The publisher validates the category before uploading and writes it to
+`categories.<id>` alongside `mods.<id>`. New mods and older unclassified entries
+require `--category`. When updating a classified mod, omit it to retain the
+category or supply another supported value to change it. An upload failure
+leaves both version and category configuration unchanged.
+
+| Value | Catalog section | Use |
+| --- | --- | --- |
+| `civilizations` | Civilizations | Civilization content |
+| `games-scenarios` | Games & Scenarios | Custom games, adventures and scenarios |
+| `enhancements` | Enhancements | Improvements to ordinary matches |
+| `maps` | Maps | Standalone maps |
+
+Choose by the mod's purpose. A scenario containing a Map and Tuning Pack still
+belongs to Games & Scenarios; those components are separate badges. Zombie
+Plague and Santa belong there. GE+ belongs to Enhancements and contains Tuning
++ Game Mode. Never put this category into the strict `garrison.json` format.
+
+To reclassify an existing release without updating its contents, edit only
+`categories.<id>` in `catalog.config.json`, then commit/push the config or run
+the builder. Keep its version unchanged. The builder reuses the verified ZIP
+when its release identity, digest and cover still match. Do not invoke the
+publisher with the already published version. When removing a catalog ID,
+remove its category assignment as well; orphan assignments are rejected.
+
+Activate category assignments only after the category-aware 0.1.7 client is
+available. Older clients reject unknown entry fields. Publish the matching client before pushing a categorized index to the live root.
+
+## Build the index
 
 For a local build after publishing:
 

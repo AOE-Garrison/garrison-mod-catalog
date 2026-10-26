@@ -4,7 +4,18 @@
   "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json",
   "mods": {
     "football_45_bundle": "0.9.1",
+    "game_enchancements_r06": "0.0.27",
+    "halloween_research_combat_02": "0.23.0-rc.12",
     "modding_showcase_full": "0.1.1",
-    "ram_napkin_race": "0.9.9"
+    "ram_napkin_race": "0.9.9",
+    "santa_level_1_movement_lab": "0.1.0-rc.14"
+  },
+  "categories": {
+    "football_45_bundle": "games-scenarios",
+    "modding_showcase_full": "games-scenarios",
+    "ram_napkin_race": "games-scenarios",
+    "halloween_research_combat_02": "games-scenarios",
+    "santa_level_1_movement_lab": "games-scenarios",
+    "game_enchancements_r06": "enhancements"
   }
 }

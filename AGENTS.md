@@ -2,7 +2,7 @@
 
 This is the public AOE-Garrison mod catalog, separate from private product source. Write repository documentation and contributor instructions in English.
 
-Use `catalog.config.json` to select mod IDs and versions. All metadata comes from release ZIPs containing `garrison.json`; `details.id` must equal the bundle key. `catalog.json` and `covers/` are generated. See README.md and docs/ADDING_MODS.md.
+Use `catalog.config.json` to select mod IDs, versions and browsing categories. Release metadata comes from ZIPs containing `garrison.json`; `details.id` must equal the bundle key. Categories are separate publisher assignments, not package component types. Use the publisher's `--category` for new or unclassified mods. `catalog.json` and `covers/` are generated. See README.md and docs/ADDING_MODS.md.
 
 Keep package ZIPs in Releases. Never commit SGA files, Blender scenes, secrets, tokens, proprietary source assets or machine-specific paths. Do not change repository visibility or publish to another destination without user direction.
 
