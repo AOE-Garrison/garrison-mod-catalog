@@ -38,26 +38,26 @@
       "details": {
         "id": "game_enchancements_r06",
         "name": "Game Enhancements+ (GE+)",
-        "version": "0.0.27",
+        "version": "0.0.28",
         "summary": "Bring battles to life with blood effects, impact-driven ragdolls and persistent battlefield remains.",
         "author": "overbait",
-        "updated": "2026-10-26",
-        "min_garrison": "0.1.7",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.9",
         "content_types": [
           "game-mode",
           "tuning-pack"
         ],
-        "description": "Blood effects and impact-driven death physics for supported foot and mounted units, with battlefield blood and gradual corpse cleanup.\n\nChoose an ordinary map. Select Game Enhancements+ (GE+) as both the Tuning Pack and Game Mode. Custom test maps are not included.\n\nRequires the matching Garrison 0.1.7 runtime. Physics coverage depends on supported unit rigs; unsupported units retain their normal death presentation.",
-        "changelog": "Release presentation refresh based on 0.0.25: clean catalog and lobby names, new cover and player-facing instructions. No custom maps. Blood, impact, physics and shared corpse-lifetime scripts are unchanged. Final Blender cover refresh; the cooked archive is unchanged from 0.0.26."
+        "description": "Blood effects and impact-driven death physics for supported foot and mounted units, with battlefield blood and gradual corpse cleanup.\n\nChoose an ordinary map. Select Game Enhancements+ (GE+) as both the Tuning Pack and Game Mode. The mode exposes the current Standard win conditions and match options. Custom test maps are not included.\n\nRequires Garrison 0.1.9 and AoE IV 17.0.12182. Physics coverage includes the qualified Viking and Scots foot and horse units; unsupported rigs retain their normal death presentation.",
+        "changelog": "Game 17 compatibility: add 66 Viking and Scots foot/horse blueprint variants to the existing rig profiles. Restore all current Standard lobby options and localized win-condition labels. Preserve the accepted blood, impact and shared corpse-lifetime behavior. Requires the matching Garrison charge-death update for berserkers and gallowglasses."
       },
       "bundle_key": "game_enchancements_r06",
       "roles": [
         "tuning"
       ],
       "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/game_enchancements_r06-v0.0.27/game_enchancements_r06-0.0.27.zip",
-        "sha256": "c3c4e234707089a6c0efc4fd36f648d5504c9515ff5477b30276b2d044fc826f",
-        "size": 3612898
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/game_enchancements_r06-v0.0.28/game_enchancements_r06-0.0.28.zip",
+        "sha256": "cd63f4fe5cabf1b9fbe2c0d599015e0d8b9ad0c67ffc1226ab0582c6dd841d9c",
+        "size": 3618153
       },
       "cover": {
         "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7.png",
@@ -244,25 +244,25 @@
       "details": {
         "id": "ui_colors",
         "name": "In-game UI Colors",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "summary": "Change the interface palette.",
-        "description": "Choose from 29 interface palettes. Switch colors live in a Garrison session, or click the selected palette again to restore the standard interface.",
+        "description": "Choose from 39 interface palettes, including eight lobby colors and two bright accent sets. Follow matches your lobby color; Random chooses a palette. Switch colors live in a Garrison session, or click the selected palette again to restore the standard interface.",
         "author": "overbait",
         "updated": "2026-10-29",
-        "min_garrison": "0.1.8",
+        "min_garrison": "0.1.9",
         "content_types": [
           "ui-colors"
         ],
-        "changelog": "Portable palette package for the matching Garrison renderer. No files are written to the Steam installation."
+        "changelog": "Eight basic colors, Electric and Ember bright accents, and more distinct hue/saturation roles. Follow and Random require Garrison 0.1.9. No files are written to the Steam installation."
       },
       "bundle_key": "ui_colors",
       "roles": [
         "ui-colors"
       ],
       "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ui_colors-v0.1.0/ui_colors-0.1.0.zip",
-        "sha256": "d0db6b20925ae62766cfac63c67cea8f2753d3231cb1838b377c877d03ec3dfa",
-        "size": 3556719
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ui_colors-v0.1.1/ui_colors-0.1.1.zip",
+        "sha256": "0397fa1eda0ac04e5e9438d20df5a8dbd0136076b33addf8f408c26aaea046ac",
+        "size": 3692380
       },
       "cover": {
         "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/aeecf56d7162bd2a09c849bbe06be12be6bb3e89fd2138d87e105ae7c1a229ba.png",

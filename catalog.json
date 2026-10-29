@@ -36,38 +36,6 @@
     },
     {
       "details": {
-        "id": "game_enchancements_r06",
-        "name": "Game Enhancements+ (GE+)",
-        "version": "0.0.27",
-        "summary": "Bring battles to life with blood effects, impact-driven ragdolls and persistent battlefield remains.",
-        "author": "overbait",
-        "updated": "2026-10-26",
-        "min_garrison": "0.1.7",
-        "content_types": [
-          "game-mode",
-          "tuning-pack"
-        ],
-        "description": "Blood effects and impact-driven death physics for supported foot and mounted units, with battlefield blood and gradual corpse cleanup.\n\nChoose an ordinary map. Select Game Enhancements+ (GE+) as both the Tuning Pack and Game Mode. Custom test maps are not included.\n\nRequires the matching Garrison 0.1.7 runtime. Physics coverage depends on supported unit rigs; unsupported units retain their normal death presentation.",
-        "changelog": "Release presentation refresh based on 0.0.25: clean catalog and lobby names, new cover and player-facing instructions. No custom maps. Blood, impact, physics and shared corpse-lifetime scripts are unchanged. Final Blender cover refresh; the cooked archive is unchanged from 0.0.26."
-      },
-      "bundle_key": "game_enchancements_r06",
-      "roles": [
-        "tuning"
-      ],
-      "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/game_enchancements_r06-v0.0.27/game_enchancements_r06-0.0.27.zip",
-        "sha256": "c3c4e234707089a6c0efc4fd36f648d5504c9515ff5477b30276b2d044fc826f",
-        "size": 3612898
-      },
-      "cover": {
-        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7.png",
-        "sha256": "34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7",
-        "size": 1959688
-      },
-      "category": "enhancements"
-    },
-    {
-      "details": {
         "id": "halloween_research_combat_02",
         "name": "Zombie Plague",
         "version": "0.23.0-rc.12",

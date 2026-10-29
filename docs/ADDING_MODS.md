@@ -65,7 +65,7 @@ Independent civilization packages use member role `civilization`, content type
 SGA byte for byte, but must still get its own immutable version and ZIP hash.
 
 The reserved `ui_colors` enhancement uses role/content type `ui-colors` and
-minimum Garrison `0.1.8`. Follow [its data-only package contract](UI_COLORS.md);
+minimum Garrison `0.1.9` for the 39-palette 0.1.1 release. Follow [its data-only package contract](UI_COLORS.md);
 renderer executables belong to the player distribution, not the mod.
 
 ## Existing releases

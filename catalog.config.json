@@ -4,13 +4,13 @@
   "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog-v2.json",
   "mods": {
     "football_45_bundle": "0.9.1",
-    "game_enchancements_r06": "0.0.27",
+    "game_enchancements_r06": "0.0.28",
     "halloween_research_combat_02": "0.23.0-rc.12",
     "modding_showcase_full": "0.1.1",
     "persians_independent": "0.1.0",
     "ram_napkin_race": "0.9.9",
     "santa_level_1_movement_lab": "0.1.0-rc.14",
-    "ui_colors": "0.1.0",
+    "ui_colors": "0.1.1",
     "vietnamese_independent": "0.1.0"
   },
   "categories": {

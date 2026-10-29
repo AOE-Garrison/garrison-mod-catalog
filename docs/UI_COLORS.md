@@ -1,12 +1,12 @@
 # Publishing In-game UI Colors
 
-This is an optional enhancement package for Garrison 0.1.8 or later. Its stable
+This is an optional enhancement package for Garrison 0.1.9 or later. Its stable
 bundle and member key is `ui_colors`; its role and content type are `ui-colors`.
 The catalog category is `enhancements`. Credit `overbait`.
 
 The ZIP contains the normal `garrison.json`, `ui_colors.sga`, cover and player
 instructions. The SGA has one `data` TOC: `garrison/ui-colors.json` plus the
-fixed inventory of 29 palettes, three compiled UI shaders each. The declaration
+fixed inventory of 39 palettes, three compiled UI shaders each. The declaration
 uses `garrison.ui-colors/v1` and binds each shader by SHA-256. The client rejects
 unknown presets, missing/extra members, invalid containers and changed hashes.
 
@@ -23,10 +23,18 @@ validator and test installation in a separate clean Garrison state directory.
 
 The card deliberately omits version/date text to make room for palette controls;
 both fields remain required in metadata and govern catalog updates. It uses
-ordinary card dimensions and an Enabled toggle. Clicking the selected palette
-restores standard colors; disabling retains the last choice. Live palette
+ordinary card dimensions, an Enabled toggle and Follow. Follow matches the local
+lobby color; Random in the lobby retains one random palette for that lobby.
+The round question-mark swatch chooses a different manual palette and turns
+Follow off. Manual palette selection also turns Follow off. Clicking the
+selected manual palette restores standard colors; disabling retains the last choice. Live palette
 switching and archive install/remove have different lifecycle boundaries.
 
 Check clean installation, offline selection persistence, cache repair, updates,
 removal and renderer acknowledgement. A successful archive readback is not
 evidence that a palette was applied to a running game.
+
+Version 0.1.1 adds the eight lobby colors and Electric/Ember bright accent sets.
+The first five original payloads remain unchanged; the other themes use more
+distinct saturation levels. Garrison 0.1.9 also accepts a complete legacy
+29-palette package. Mixed or partial preset inventories are rejected.
