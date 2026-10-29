@@ -26,7 +26,7 @@ leaves both version and category configuration unchanged.
 | `civilizations` | Civilizations | Civilization content |
 | `games-scenarios` | Games & Scenarios | Custom games, adventures and scenarios |
 | `enhancements` | Enhancements | Improvements to ordinary matches |
-| `maps` | Maps | Standalone maps |
+| `maps` | Maps & Biomes | Standalone maps and biomes |
 
 Choose by the mod's purpose. A scenario containing a Map and Tuning Pack still
 belongs to Games & Scenarios; those components are separate badges. Zombie
@@ -48,10 +48,25 @@ available. Older clients reject unknown entry fields. Publish the matching clien
 For a local build after publishing:
 
 ```powershell
-python scripts/build_catalog.py --branch main
+python scripts/build_catalog.py --branch main --output catalog-v2.json --legacy-output catalog.json
 ```
 
-Review and commit `catalog.json` and `covers/` together. Never edit hashes or sizes by hand. Keep ZIPs in Releases. Do not commit cooked archives, Blender scenes, vendor assets, credentials, local paths or generated diagnostics. Keep any required attribution and notices in the package.
+Review and commit `catalog-v2.json`, `catalog.json` and `covers/` together. The
+legacy feed excludes packages requiring 0.1.8 and any new civilization fields.
+Never edit hashes or sizes by hand. Keep ZIPs in Releases. Do not commit cooked
+archives, Blender scenes, vendor assets, credentials, local paths or generated
+diagnostics. Keep required attribution and notices in the package.
+
+Independent civilization packages use member role `civilization`, content type
+`civilization` and minimum Garrison `0.1.8`. They belong to category
+`civilizations`; standard matches leave Tuning Pack at None. Follow the
+[maintainer handoff](CIVILIZATION_MAINTAINER_HANDOFF.md) and
+[card preset](CIVILIZATION_CARDS.md). A new outer release may retain an accepted
+SGA byte for byte, but must still get its own immutable version and ZIP hash.
+
+The reserved `ui_colors` enhancement uses role/content type `ui-colors` and
+minimum Garrison `0.1.8`. Follow [its data-only package contract](UI_COLORS.md);
+renderer executables belong to the player distribution, not the mod.
 
 ## Existing releases
 

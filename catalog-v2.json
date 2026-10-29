@@ -1,0 +1,200 @@
+{
+  "schema": "garrison.catalog/v1",
+  "mods": [
+    {
+      "details": {
+        "id": "football_45_bundle",
+        "name": "OverFootball",
+        "version": "0.9.1",
+        "summary": "Stadium football with lobby teams and individual player control.",
+        "description": "Play stadium football with one to four participants per team. Each team has seven footballers; select a free teammate to control, then switch to another when needed.\n\nHow to launch\n1. Enable OverFootball in Garrison and press Play.\n2. In a custom lobby, select OverFootball map and OverFootball tuning. Keep the regular game mode.\n3. Choose Team 1 or Team 2 in the AoE IV lobby and close unused slots.\n4. Every human presses READY on the match setup screen.\n\nControls: right click to move; Q for a weak kick, W for a strong kick, E to boost, R to follow the ball, T to cheer.\n\nThe top Stamina Info button toggles both team panels. Stamina bars show the controlling participant's lobby colour. Team kits stay blue/red in team play; 1v1 keeps the chosen lobby colours.\n\nFor solo practice, use one human and three to seven AI slots. Practice participants yield control when you select their footballer.",
+        "author": "overbait",
+        "updated": "2026-10-12",
+        "min_garrison": "0.1.0",
+        "changelog": "Larger goals: expanded frames, animated nets and goal area. Net reactions remain inside the boards.",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "football_45_bundle",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.1/football_45_bundle-0.9.1.zip",
+        "sha256": "e291e4f3005ef90af3a8740eb8bede00de7973ad734c0864f75bfb1d1b697ab9",
+        "size": 87823991
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c.jpg",
+        "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
+        "size": 326561
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "game_enchancements_r06",
+        "name": "Game Enhancements+ (GE+)",
+        "version": "0.0.27",
+        "summary": "Bring battles to life with blood effects, impact-driven ragdolls and persistent battlefield remains.",
+        "author": "overbait",
+        "updated": "2026-10-26",
+        "min_garrison": "0.1.7",
+        "content_types": [
+          "game-mode",
+          "tuning-pack"
+        ],
+        "description": "Blood effects and impact-driven death physics for supported foot and mounted units, with battlefield blood and gradual corpse cleanup.\n\nChoose an ordinary map. Select Game Enhancements+ (GE+) as both the Tuning Pack and Game Mode. Custom test maps are not included.\n\nRequires the matching Garrison 0.1.7 runtime. Physics coverage depends on supported unit rigs; unsupported units retain their normal death presentation.",
+        "changelog": "Release presentation refresh based on 0.0.25: clean catalog and lobby names, new cover and player-facing instructions. No custom maps. Blood, impact, physics and shared corpse-lifetime scripts are unchanged. Final Blender cover refresh; the cooked archive is unchanged from 0.0.26."
+      },
+      "bundle_key": "game_enchancements_r06",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/game_enchancements_r06-v0.0.27/game_enchancements_r06-0.0.27.zip",
+        "sha256": "c3c4e234707089a6c0efc4fd36f648d5504c9515ff5477b30276b2d044fc826f",
+        "size": 3612898
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7.png",
+        "sha256": "34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7",
+        "size": 1959688
+      },
+      "category": "enhancements"
+    },
+    {
+      "details": {
+        "id": "halloween_research_combat_02",
+        "name": "Zombie Plague",
+        "version": "0.23.0-rc.12",
+        "summary": "A zombie survival mod. Choose from five classes, fight through the hordes, recover the relic from a ruined cathedral, and escape by ship.",
+        "description": "A zombie survival mod. Choose from five classes, fight through the hordes, recover the relic from a ruined cathedral, and escape by ship.\n\nPlay as a Knight, Landsknecht, Crossbowman, Musketeer, or Monk — each with unique abilities and a different combat style.\n\nFeatures an improved combat system, custom zombie animations and sounds, blood effects, and physics-driven ragdolls.\n\nRequires the matching Garrison 0.1.7 runtime.\n\nTo play, select Zombie Plague Map and Zombie Plague Tuning together. Both are included in this package. Keep the map’s reserved AI slot.",
+        "author": "overbait",
+        "updated": "2026-10-26",
+        "min_garrison": "0.1.7",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
+        "changelog": "Release presentation refresh based on accepted RC11. Package naming and Garrison requirement updated; the cooked archive, gameplay, cover and internal identities are unchanged. Includes independent class readiness, bounded player conversion, delayed escape ending, looping selection idles and actor-relative selection lights."
+      },
+      "bundle_key": "halloween_research_combat_02",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/halloween_research_combat_02-v0.23.0-rc.12/halloween_research_combat_02-0.23.0-rc.12.zip",
+        "sha256": "3566f720c41a2b31cfefbc78c38880e48949d3a1b62a4e912ef25408ea3c1287",
+        "size": 238770366
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/b4950e3f46495146b9ba1033cfc03c70915ad44d1013049798d341419ebefe23.png",
+        "sha256": "b4950e3f46495146b9ba1033cfc03c70915ad44d1013049798d341419ebefe23",
+        "size": 903517
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "modding_showcase_full",
+        "name": "Modding Showcase",
+        "version": "0.1.1",
+        "summary": "Meet Shrek and ten Wizard Sheep, then build the Cow House on Dry Arabia.",
+        "author": "overbait",
+        "updated": "2026-10-03",
+        "min_garrison": "0.1.0",
+        "description": "A playable collection of custom characters and building art. At the centre of the map you receive Shrek, ten Wizard Sheep, a scout and a special builder. Select the builder, open the first-age build menu and use House to construct the Cow House. Shrek has manual movement, combat and a dance ability; the scenario does not issue automatic combat or dance orders.\n\nYour normal civilisation start is retained, with eight extra villagers, five spearmen, 600 food, 200 wood and 250 gold. With one human player, you control both the starting settlement and the centre group.\n\nHow to launch\n1. Enable Modding Showcase in Garrison and press Play.\n2. Create a solo custom match with one human and an AI.\n3. Map: ordinary Dry Arabia.\n4. Game Mode: Modding Showcase.\n5. Tuning Pack: Modding Showcase Tuning.\n6. Start the match and look at the centre of the map after a few seconds.\n\nThis bundle provides a Game Mode and Tuning Pack; do not choose a Crafted map. Enabling it in Garrison does not select these lobby fields. Use only this showcase bundle for the test. Town-centre recruitment of showcase units is not included.\n",
+        "changelog": "0.1.1 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
+        "content_types": [
+          "game-mode",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "modding_showcase_full",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/modding_showcase_full-v0.1.1/modding_showcase_full-0.1.1.zip",
+        "sha256": "9d3dd5e4fb1b150bba0feb21b6d89cd3b297ff7e4025e1e13f5400fbc619c90a",
+        "size": 45139411
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9.jpg",
+        "sha256": "0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9",
+        "size": 217700
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "ram_napkin_race",
+        "name": "Ram Napkin Race",
+        "version": "0.9.9",
+        "summary": "Drive colourful rams across a rolling road-carpet arena.",
+        "author": "overbait",
+        "updated": "2026-10-03",
+        "min_garrison": "0.1.0",
+        "description": "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: right click to drive; S to brake; Q to strike. Select your ram and press W to follow your ram or E to follow the active ram. Press the same key again for free camera.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
+        "changelog": "0.9.9 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "ram_napkin_race",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ram_napkin_race-v0.9.9/ram_napkin_race-0.9.9.zip",
+        "sha256": "4b300fefa7c1465557ffd062d8a3fe94691459b31129c783e9d08d74a461e3ed",
+        "size": 5450934
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29.jpg",
+        "sha256": "58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29",
+        "size": 316699
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "santa_level_1_movement_lab",
+        "name": "Santa Claus in Trouble",
+        "version": "0.1.0-rc.14",
+        "summary": "Help Santa collect presents across ten festive platforming levels with double jumps and moving platforms.",
+        "updated": "2026-10-26",
+        "min_garrison": "0.1.7",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
+        "author": "overbait",
+        "description": "A festive platforming adventure. Help Santa collect presents across ten levels, avoid enemies, and reach the exit.\n\nDouble-jump across gaps, ride moving platforms, and explore each level for missing gifts.\n\nThis is a non-commercial, fan-made mod. All character models and textures used in this mod belong to Joymania Entertainment from the original game Santa Claus in Trouble (2002). All rights belong to their respective owners.\n\nRequires the matching Garrison 0.1.7 runtime.\n\nTo play, select Santa in Trouble Map and Santa in Trouble Tuning together. Both are included in this package.",
+        "changelog": "Release presentation refresh based on RC12. Replaced the old prototype Tuning description and updated package naming and Garrison requirement. All gameplay, movement, input, level, animation and audio files are unchanged. RC14 adds the author-approved non-commercial fan-mod notice and original character-model/texture attribution; the cooked archive is identical to RC13."
+      },
+      "bundle_key": "santa_level_1_movement_lab",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/santa_level_1_movement_lab-v0.1.0-rc.14/santa_level_1_movement_lab-0.1.0-rc.14.zip",
+        "sha256": "422587ee742fbd247dca6eca7095f28adb544906edf3fd37522ce695024f3568",
+        "size": 86101468
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/b0cf8bfa1d9b4ddb221d6cb1f96cb1720d82f54b799f81f262c23ca87e229fe4.png",
+        "sha256": "b0cf8bfa1d9b4ddb221d6cb1f96cb1720d82f54b799f81f262c23ca87e229fe4",
+        "size": 762027
+      },
+      "category": "games-scenarios"
+    }
+  ]
+}

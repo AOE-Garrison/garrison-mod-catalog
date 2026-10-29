@@ -1,7 +1,7 @@
 {
   "repository": "AOE-Garrison/garrison-mod-catalog",
   "private": false,
-  "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json",
+  "source": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog-v2.json",
   "mods": {
     "football_45_bundle": "0.9.1",
     "game_enchancements_r06": "0.0.27",

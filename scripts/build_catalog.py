@@ -65,7 +65,7 @@ def safe_name(name: str) -> PurePosixPath:
         if (not part or part in ('.', '..') or part.endswith(('.', ' '))
                 or any(ord(c) < 32 or c in '<>:"|?*' for c in part)
                 or stem in ('CON', 'PRN', 'AUX', 'NUL')
-                or re.fullmatch(r'(COM|LPT)[1-9¹²³]', stem)):
+                or re.fullmatch(r'(COM|LPT)[1-9В№ВІВі]', stem)):
             raise ValueError('Unsafe ZIP path')
     return PurePosixPath(*parts)
 
@@ -121,7 +121,7 @@ def inspect_package(path: Path) -> tuple[dict, list[str], tuple[str, bytes] | No
             if member['mod_key'].casefold() in keys:
                 raise ValueError('Duplicate archive key')
             keys.add(member['mod_key'].casefold())
-            if member['role'] not in ('map', 'tuning'):
+            if member['role'] not in ('map', 'tuning', 'civilization', 'ui-colors'):
                 raise ValueError('Unsupported content role')
             roles.append(member['role'])
             relative = safe_name(member['path'])
@@ -176,20 +176,43 @@ def version_order(value: str) -> tuple:
     return numbers, (0, parts)
 
 
+def validate_civilization(value) -> None:
+    """Keep the standalone publisher aligned with the native card metadata."""
+    if value is None:
+        return
+    if not isinstance(value, dict) or value.keys() - {'period', 'difficulty', 'tagline', 'bonuses'}:
+        raise ValueError('civilization must be an object with period, difficulty, tagline and bonuses')
+    for key, limit in [('period', 64), ('tagline', 160)]:
+        text = value.get(key, '')
+        if (not isinstance(text, str) or len(text) > limit
+                or any(ord(c) < 32 and c not in '\n\t' or 0x7F <= ord(c) < 0xA0 for c in text)):
+            raise ValueError(f'Invalid civilization.{key}')
+    difficulty = value.get('difficulty')
+    if difficulty is not None and (type(difficulty) is not int or not 1 <= difficulty <= 3):
+        raise ValueError('civilization.difficulty must be 1, 2, 3 or null when unknown')
+    bonuses = value.get('bonuses', [])
+    if not isinstance(bonuses, list) or len(bonuses) > 24:
+        raise ValueError('civilization.bonuses must contain at most 24 text rows')
+    for row in bonuses:
+        if (not isinstance(row, str) or not row.strip() or len(row) > 1000
+                or any(ord(c) < 32 and c not in '\n\t' or 0x7F <= ord(c) < 0xA0 for c in row)):
+            raise ValueError('Invalid civilization.bonuses row')
+
+
 def validate_details(details: dict) -> None:
     """The client's ``ModDetails`` rules, as ``src/core/mod_bundle.check_details`` writes them."""
     if not isinstance(details, dict):
         raise ValueError('Mod details must be an object')
     required = {'id', 'name', 'version', 'summary', 'updated', 'min_garrison'}
     if not required <= details.keys() or details.keys() - (required | {'description', 'author', 'changelog',
-                                                                       'content_types', 'cover'}):
+                                                                       'content_types', 'cover', 'civilization'}):
         raise ValueError('Missing or unknown mod details')
     if 'content_types' in details:
         types = details['content_types']
-        if (not isinstance(types, list) or len(types) > 3
-                or any(t not in ('map', 'game-mode', 'tuning-pack') for t in types)
+        if (not isinstance(types, list) or len(types) > 5
+                or any(t not in ('map', 'game-mode', 'tuning-pack', 'civilization', 'ui-colors') for t in types)
                 or len(set(types)) != len(types)):
-            raise ValueError('content_types must list distinct map, game-mode or tuning-pack components')
+            raise ValueError('content_types must list distinct map, game-mode, tuning-pack, civilization or ui-colors components')
     validate_key(details['id'])
     for key, limit in [('name', 100), ('summary', 180), ('description', 8000), ('author', 100), ('changelog', 8000)]:
         value = details.get(key, '')
@@ -212,6 +235,9 @@ def validate_details(details: dict) -> None:
                 or PurePosixPath(cover).suffix.lower() not in COVER_SUFFIXES):
             raise ValueError('cover must name a PNG, JPEG or WebP file beside garrison.json')
         safe_name(cover)
+    validate_civilization(details.get('civilization'))
+    if details.get('civilization') is not None and 'civilization' not in details.get('content_types', []):
+        raise ValueError('civilization metadata requires the civilization content_type')
 
 
 def read_config(root: Path) -> dict:
@@ -324,7 +350,17 @@ def _note(message: str) -> None:
     print(message, file=sys.stderr)
 
 
-def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | None = None) -> dict:
+def legacy_catalog(result: dict) -> dict:
+    """0.1.7 parses strict enums before checking min_garrison; never send it new wire fields."""
+    return {'schema': CATALOG_SCHEMA, 'mods': [entry for entry in result['mods']
+        if version_order(entry['details']['min_garrison']) < version_order('0.1.8')
+        and 'civilization' not in entry['details']
+        and set(entry['roles']) <= {'map', 'tuning'}
+        and set(entry['details'].get('content_types', [])) <= {'map', 'game-mode', 'tuning-pack'}]}
+
+
+def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | None = None,
+          legacy_output: Path | None = None) -> dict:
     """Write ``output`` (catalog.json) and ``covers/`` for the releases ``catalog.config.json`` lists."""
     config = read_config(root)
     github = github or GitHub(config['repository'], config.get('private', False))
@@ -378,6 +414,9 @@ def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | No
         mods.append(entry)
     result = {'schema': CATALOG_SCHEMA, 'mods': mods}
     encoded = (json.dumps(result, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+    legacy_encoded = (json.dumps(legacy_catalog(result), ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+    if legacy_output is not None and legacy_output.resolve() == output.resolve():
+        raise ValueError('Full and legacy catalogs must use different paths')
     if len(encoded) > 2 * 1024**2:
         raise ValueError('Catalog exceeds 2 MiB')
     # Covers first, then the index; a failure above keeps the last published index.
@@ -395,6 +434,15 @@ def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | No
         os.replace(temporary, output)
     finally:
         temporary.unlink(missing_ok=True)
+    if legacy_output is not None:
+        legacy_output.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(dir=legacy_output.parent, delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(legacy_encoded)
+        try:
+            os.replace(temporary, legacy_output)
+        finally:
+            temporary.unlink(missing_ok=True)
     return result
 
 
@@ -432,6 +480,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--root', type=Path, default=Path('.'))
     parser.add_argument('--output', type=Path, default=Path('catalog.json'))
+    parser.add_argument('--legacy-output', type=Path, help='Optional 0.1.7-compatible index; excludes new wire fields')
     parser.add_argument('--branch', default='main', help='the branch catalog.json and covers/ are published on')
     args = parser.parse_args()
-    build(args.root, args.output, branch=args.branch)
+    build(args.root, args.output, branch=args.branch, legacy_output=args.legacy_output)

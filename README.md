@@ -18,15 +18,16 @@ unclassified mods require `--category`; updates retain their existing category
 when it is omitted. Categories describe purpose, separately from Map / Tuning /
 Mode component badges. Category-only edits need no new ZIP or release.
 
-Roll out the category-aware Garrison 0.1.7 client before activating categorized
-indexes; older clients reject the new entry field. The 0.1.7 client is published alongside the categorized catalog.
+Publish the matching client before activating packages requiring it. Garrison
+0.1.8 reads `catalog-v2.json`; `catalog.json` remains a filtered 0.1.7 feed.
+Older clients reject new fields before evaluating minimum versions.
 
 ## Connect Garrison
 
 Open **Mods > Catalog > Sync**. The default source is:
 
 ```text
-https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog.json
+https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog-v2.json
 ```
 
 Sync refreshes the catalog. Installing or updating a selected mod verifies its ZIP size and SHA-256. Enabling a mod does not choose its map, Game Mode or Tuning Pack in the lobby; follow that mod's launch instructions.
@@ -34,3 +35,6 @@ Sync refreshes the catalog. Installing or updating a selected mod verifies its Z
 The Garrison product repository and product distribution are separate from this public catalog.
 
 [Author instructions](docs/ADDING_MODS.md) include the transition from older catalog releases.
+
+For independent civilizations, read the [maintainer and AI handoff](docs/CIVILIZATION_MAINTAINER_HANDOFF.md),
+[card preset](docs/CIVILIZATION_CARDS.md) and [0.1.8 release checklist](docs/RELEASE_0.1.8.md).

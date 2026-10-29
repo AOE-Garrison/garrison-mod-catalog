@@ -1,0 +1,19 @@
+{
+  "id": "example_civilization",
+  "name": "Example Civilization",
+  "version": "0.1.0",
+  "summary": "Replace with one concrete gameplay sentence.",
+  "description": "Replace with a concise introduction of approximately 300–340 characters describing the civilization's economy, army and distinctive mechanics.",
+  "author": "Author names",
+  "updated": "2026-10-29",
+  "min_garrison": "0.1.8",
+  "content_types": ["civilization"],
+  "cover": "cover.png",
+  "civilization": {
+    "period": "Historical period",
+    "difficulty": 2,
+    "tagline": "Economy, Army, Unique Mechanic",
+    "bonuses": ["Replace with an implemented, verified civilization bonus."]
+  },
+  "changelog": "First independent release."
+}
