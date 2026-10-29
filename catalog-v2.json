@@ -133,6 +133,50 @@
     },
     {
       "details": {
+        "id": "persians_independent",
+        "name": "Persians",
+        "version": "0.1.0",
+        "summary": "Iranian dynasties, Divans and trade shape the Persian economy and army.",
+        "min_garrison": "0.1.8",
+        "content_types": [
+          "civilization"
+        ],
+        "updated": "2026-10-29",
+        "author": "hosein81 and chilly5",
+        "description": "The Persians build their strength through Iranian dynasties, Divans and trade. Advancing a dynasty upgrades the army, while Divans oversee nearby economic or military buildings. Caravanserais protect passing Traders and speed their journeys. Specialized troops reward careful army composition and the right matchups.",
+        "changelog": "First independent Garrison release. Separate civilization selection with Tuning Pack = None; native technology tree, Overview bonuses and flag presentation. Accepted gameplay, art and audio archive preserved unchanged. Known source model and texture defects remain under author development.",
+        "civilization": {
+          "period": "934 - 1629 CE",
+          "difficulty": 3,
+          "tagline": "Iranian Dynasties, Divans, Trade",
+          "bonuses": [
+            "Advance Iranian dynasties to unlock army veterancy.",
+            "Divans supervise nearby economic or military buildings.",
+            "Caravanserais improve the protection and speed of passing Traders.",
+            "Specialized unique units excel against their intended counters.",
+            "Mills create orchards near Berries; Villagers gather Berries faster.",
+            "Daylamite, Qizilbash, Savar, Assassin and Zamburak."
+          ]
+        }
+      },
+      "bundle_key": "persians_independent",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/persians_independent-v0.1.0/persians_independent-0.1.0.zip",
+        "sha256": "1dea196fb58b43a2c5d9d469e2e21201171ad95ef513709c9e424d3ce6af6282",
+        "size": 261415373
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/3a71e614c2dea75a0b2e3fe7ed72f773af9222170bc9db576b0d87aadb1f16a5.png",
+        "sha256": "3a71e614c2dea75a0b2e3fe7ed72f773af9222170bc9db576b0d87aadb1f16a5",
+        "size": 220637
+      },
+      "category": "civilizations"
+    },
+    {
+      "details": {
         "id": "ram_napkin_race",
         "name": "Ram Napkin Race",
         "version": "0.9.9",
@@ -195,6 +239,82 @@
         "size": 762027
       },
       "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "ui_colors",
+        "name": "In-game UI Colors",
+        "version": "0.1.0",
+        "summary": "Change the interface palette.",
+        "description": "Choose from 29 interface palettes. Switch colors live in a Garrison session, or click the selected palette again to restore the standard interface.",
+        "author": "overbait",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.8",
+        "content_types": [
+          "ui-colors"
+        ],
+        "changelog": "Portable palette package for the matching Garrison renderer. No files are written to the Steam installation."
+      },
+      "bundle_key": "ui_colors",
+      "roles": [
+        "ui-colors"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ui_colors-v0.1.0/ui_colors-0.1.0.zip",
+        "sha256": "d0db6b20925ae62766cfac63c67cea8f2753d3231cb1838b377c877d03ec3dfa",
+        "size": 3556719
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/aeecf56d7162bd2a09c849bbe06be12be6bb3e89fd2138d87e105ae7c1a229ba.png",
+        "sha256": "aeecf56d7162bd2a09c849bbe06be12be6bb3e89fd2138d87e105ae7c1a229ba",
+        "size": 3178538
+      },
+      "category": "enhancements"
+    },
+    {
+      "details": {
+        "id": "vietnamese_independent",
+        "version": "0.1.0",
+        "summary": "Wear down enemies with light infantry, traps and poisoned arrows, secure the map through Hideouts and tunnels, then field powerful gunpowder units.",
+        "author": "hosein81 and chilly5",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.8",
+        "content_types": [
+          "civilization"
+        ],
+        "name": "Vietnamese",
+        "description": "The Vietnamese wear down stronger armies through guerrilla warfare, traps and poisoned arrows. Hideouts secure resources and connect a network of tunnels, while Worker Elephants carry Villagers between gathering sites. Water Buffalo build Rice Paddies for food and wood, supporting a late-game army of powerful gunpowder units.",
+        "civilization": {
+          "period": "968 - 1592 CE",
+          "difficulty": 2,
+          "tagline": "Guerrilla Warfare, Traps, Gunpowder",
+          "bonuses": [
+            "Water Buffalo build free Rice Paddies. One Villager gathers food while one Buffalo produces wood.",
+            "Hideouts accept all four resources and can be fortified.",
+            "Light infantry build free Bamboo Stake Traps.",
+            "Lam Sơn Skirmishers counter ranged units; Heavy Arquebusiers fire penetrating shots.",
+            "Nỏ thần fire scattered volleys of bolts.",
+            "Town Center-rooted tunnels transport eligible land units between connected buildings.",
+            "Unique landmarks provide free Buffalo, economic stealth and Royal Elephants."
+          ]
+        },
+        "changelog": "First independent Garrison release. Separate civilization selection with Tuning Pack = None; native technology tree, Overview bonuses and flag presentation. Accepted gameplay, art and audio archive preserved unchanged. Known source model and texture defects remain under author development."
+      },
+      "bundle_key": "vietnamese_independent",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/vietnamese_independent-v0.1.0/vietnamese_independent-0.1.0.zip",
+        "sha256": "fb20784415e4c59800978af766a8df077d9a458bffffb9d08701cb465f1eab6a",
+        "size": 228737665
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/a096f6c79395f6242d657e5fd9cba6a5eebd3850fd66c5d646f9ba5086b258d6.png",
+        "sha256": "a096f6c79395f6242d657e5fd9cba6a5eebd3850fd66c5d646f9ba5086b258d6",
+        "size": 3499633
+      },
+      "category": "civilizations"
     }
   ]
 }

@@ -7,15 +7,21 @@
     "game_enchancements_r06": "0.0.27",
     "halloween_research_combat_02": "0.23.0-rc.12",
     "modding_showcase_full": "0.1.1",
+    "persians_independent": "0.1.0",
     "ram_napkin_race": "0.9.9",
-    "santa_level_1_movement_lab": "0.1.0-rc.14"
+    "santa_level_1_movement_lab": "0.1.0-rc.14",
+    "ui_colors": "0.1.0",
+    "vietnamese_independent": "0.1.0"
   },
   "categories": {
     "football_45_bundle": "games-scenarios",
-    "modding_showcase_full": "games-scenarios",
-    "ram_napkin_race": "games-scenarios",
+    "game_enchancements_r06": "enhancements",
     "halloween_research_combat_02": "games-scenarios",
+    "modding_showcase_full": "games-scenarios",
+    "persians_independent": "civilizations",
+    "ram_napkin_race": "games-scenarios",
     "santa_level_1_movement_lab": "games-scenarios",
-    "game_enchancements_r06": "enhancements"
+    "ui_colors": "enhancements",
+    "vietnamese_independent": "civilizations"
   }
 }
