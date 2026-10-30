@@ -38,3 +38,6 @@ The Garrison product repository and product distribution are separate from this 
 
 For independent civilizations, read the [maintainer and AI handoff](docs/CIVILIZATION_MAINTAINER_HANDOFF.md),
 [card preset](docs/CIVILIZATION_CARDS.md) and [0.1.8 release checklist](docs/RELEASE_0.1.8.md).
+
+[Berbers 0.1.1](docs/BERBERS.md) includes upstream provenance, the catalog card
+metadata sources, independent package checks and the remaining visual test.
