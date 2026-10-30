@@ -3,6 +3,50 @@
   "mods": [
     {
       "details": {
+        "id": "berbers",
+        "name": "Berbers",
+        "version": "0.1.1",
+        "summary": "The Berber Dynasties: tribal alliances, desert warriors and trade.",
+        "description": "Unite the tribes of the Maghreb through mobile armies, tribal alliances and trade. Establish Tribal Tents to develop Sanhaja, Zenata or Masmuda alliances, unlock specialist desert warriors and turn nearby military spending into free Villagers. Support your armies with cheaper economic buildings and Saharan Traders.",
+        "author": "hosein81 and marcokistan",
+        "updated": "2026-10-30",
+        "min_garrison": "0.1.9",
+        "content_types": [
+          "civilization"
+        ],
+        "changelog": "Catalog presentation release based on the author's Berbers 0.1.0. Adds historical period, difficulty, gameplay themes, six bonus rows, full credits and source provenance. The SGA, gameplay, art, audio and original flag cover are byte-identical to upstream 0.1.0. Requires Garrison 0.1.9+. Select Berbers / Standard / Tuning Pack: None. The author accepted trial.3 loading and basic play; the 0.1.0 flag revision still needs visual retesting. Broader mechanics, AI, repeated matches, save/load and replays remain unverified; multiplayer support is not claimed.",
+        "civilization": {
+          "period": "980 - 1549 CE",
+          "difficulty": 3,
+          "tagline": "Tribal Tents, Alliances, Mobile Armies",
+          "bonuses": [
+            "Tribal Tents: Build a Tribal Tent each Age to form Sanhaja, Zenata or Masmuda alliances and unlock their specialist units. Military spending near a Tent earns influence toward free Villagers.",
+            "Nomadic Trade Network: Town Centers, Markets, Mills, Lumber Camps, Mining Camps and Docks cost 10% less Wood.",
+            "Enduring Generations: From the Feudal Age onward, economic and military units gain 5% maximum Health. This bonus does not increase further with each Age.",
+            "Tribal Alliances: Sanhaja grants 20% more Wood on drop-off; Zenata grants 20% more Food; Masmuda grants 20% more Gold and Stone at the corresponding drop-off buildings.",
+            "Tribal Reforms and Dynasties: Research Tribal Reforms in the Castle Age and Dynasties in the Imperial Age to develop alliance units and technologies.",
+            "Unique Units: Tuareg Spearman, Mehari Rider, Sanhaja Camel Archer, Zenata Lancer, Masmuda Crossbowman and Almohad Handgunner. Saharan Traders support the trading economy."
+          ]
+        }
+      },
+      "bundle_key": "berbers",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/berbers-v0.1.1/berbers-0.1.1.zip",
+        "sha256": "dba912f5a0b3082af27e4f090b3e7fe34b57063e4129285d09284e654f4db13e",
+        "size": 615106849
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/ba06656f389d6e2dd54bcaa791935346c95d9e46a807d486c150e2abed0abca6.png",
+        "sha256": "ba06656f389d6e2dd54bcaa791935346c95d9e46a807d486c150e2abed0abca6",
+        "size": 2698977
+      },
+      "category": "civilizations"
+    },
+    {
+      "details": {
         "id": "football_45_bundle",
         "name": "OverFootball",
         "version": "0.9.1",
