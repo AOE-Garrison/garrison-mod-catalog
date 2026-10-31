@@ -32,5 +32,31 @@ button, not in a long scrollable card introduction. Enabled state comes from
 Garrison, so do not add "Ready for your next game" to metadata. The category
 subtitle uses project counts and catalog groups sort newest update date first.
 
+## Garrison 0.1.10 presentation
+
+The Catalog overview shows only the five newest civilizations in one overlapping
+row. Hover briefly to reveal a card, click to keep it open, and click outside or
+press Escape to collapse it. **View all** opens the complete Civilizations
+category; additional entries never create another overview row. Installed and
+the complete category retain their ordinary grids.
+
+Every overlap state uses the full card layout. Text keeps its expanded wrapping
+while neighboring cards and the right-edge gradient cover it. Do not prepare a
+second collapsed description, insert manual line breaks to fit a visible strip,
+or draw text, a fade or buttons into the flag image. Garrison owns the fade,
+animation, clipping and responsive layout.
+
+The footer sits inside the flag artwork: author on the left, version and update
+date together, then the activation switch and action icons on the right. Narrow
+windows stack these controls. Installed and uninstalled neighbors share a
+height. Garrison supplies Enabled, details, install/update and removal controls;
+metadata must not imitate them. Keep the real author credit intact rather than
+shortening names to make space for controls.
+
+These are client-side changes. Existing accepted packages and flag images do
+not need a new version or a recook. Raise the package version only when its
+actual contents or metadata change. The new layout does not change the existing
+`civilization` role or the package's minimum version requirement.
+
 Card metadata does not change in-game text. Update ArmyBP/RaceBP/Codex and their
 private localization explicitly when those surfaces need a change.

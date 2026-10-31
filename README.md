@@ -19,7 +19,8 @@ when it is omitted. Categories describe purpose, separately from Map / Tuning /
 Mode component badges. Category-only edits need no new ZIP or release.
 
 Publish the matching client before activating packages requiring it. Garrison
-0.1.8 reads `catalog-v2.json`; `catalog.json` remains a filtered 0.1.7 feed.
+0.1.10 reads `catalog-v3.json`; 0.1.8/0.1.9 use `catalog-v2.json`, and
+`catalog.json` remains a filtered 0.1.7 feed.
 Older clients reject new fields before evaluating minimum versions.
 
 ## Connect Garrison
@@ -27,7 +28,7 @@ Older clients reject new fields before evaluating minimum versions.
 Open **Mods > Catalog > Sync**. The default source is:
 
 ```text
-https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog-v2.json
+https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/catalog-v3.json
 ```
 
 Sync refreshes the catalog. Installing or updating a selected mod verifies its ZIP size and SHA-256. Enabling a mod does not choose its map, Game Mode or Tuning Pack in the lobby; follow that mod's launch instructions.
@@ -38,6 +39,9 @@ The Garrison product repository and product distribution are separate from this 
 
 For independent civilizations, read the [maintainer and AI handoff](docs/CIVILIZATION_MAINTAINER_HANDOFF.md),
 [card preset](docs/CIVILIZATION_CARDS.md) and [0.1.8 release checklist](docs/RELEASE_0.1.8.md).
+
+[Player Colors](docs/PLAYER_COLORS.md) describes the data-only enhancement and
+its Garrison 0.1.10 palette card. Layout and runtime updates ship with the client.
 
 [Berbers 0.1.1](docs/BERBERS.md) includes upstream provenance, the catalog card
 metadata sources, independent package checks and the remaining visual test.

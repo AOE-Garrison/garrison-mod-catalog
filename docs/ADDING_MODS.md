@@ -48,11 +48,13 @@ available. Older clients reject unknown entry fields. Publish the matching clien
 For a local build after publishing:
 
 ```powershell
-python scripts/build_catalog.py --branch main --output catalog-v2.json --legacy-output catalog.json
+python scripts/build_catalog.py --branch main --output catalog-v3.json --v2-output catalog-v2.json --legacy-output catalog.json
 ```
 
-Review and commit `catalog-v2.json`, `catalog.json` and `covers/` together. The
-legacy feed excludes packages requiring 0.1.8 and any new civilization fields.
+Review and commit `catalog-v3.json`, `catalog-v2.json`, `catalog.json` and `covers/`
+together. Garrison 0.1.10 uses v3. The v2 feed serves 0.1.8/0.1.9 and excludes
+Player Colors and its new wire role. The legacy feed serves 0.1.7 and excludes
+packages requiring 0.1.8 and any new civilization fields.
 Never edit hashes or sizes by hand. Keep ZIPs in Releases. Do not commit cooked
 archives, Blender scenes, vendor assets, credentials, local paths or generated
 diagnostics. Keep required attribution and notices in the package.
@@ -67,6 +69,11 @@ SGA byte for byte, but must still get its own immutable version and ZIP hash.
 The reserved `ui_colors` enhancement uses role/content type `ui-colors` and
 minimum Garrison `0.1.9` for the 39-palette 0.1.1 release. Follow [its data-only package contract](UI_COLORS.md);
 renderer executables belong to the player distribution, not the mod.
+
+The reserved `player_colors` enhancement uses role/content type `player-colors`
+and minimum Garrison `0.1.10`. Follow [Player Colors](PLAYER_COLORS.md). Its
+interactive card and runtime are client-owned; card layout fixes alone do not
+require republishing the unchanged declaration package.
 
 ## Existing releases
 
