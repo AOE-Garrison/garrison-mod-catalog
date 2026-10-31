@@ -121,7 +121,7 @@ def inspect_package(path: Path) -> tuple[dict, list[str], tuple[str, bytes] | No
             if member['mod_key'].casefold() in keys:
                 raise ValueError('Duplicate archive key')
             keys.add(member['mod_key'].casefold())
-            if member['role'] not in ('map', 'tuning', 'civilization', 'ui-colors'):
+            if member['role'] not in ('map', 'tuning', 'civilization', 'ui-colors', 'player-colors'):
                 raise ValueError('Unsupported content role')
             roles.append(member['role'])
             relative = safe_name(member['path'])
@@ -210,9 +210,9 @@ def validate_details(details: dict) -> None:
     if 'content_types' in details:
         types = details['content_types']
         if (not isinstance(types, list) or len(types) > 5
-                or any(t not in ('map', 'game-mode', 'tuning-pack', 'civilization', 'ui-colors') for t in types)
+                or any(t not in ('map', 'game-mode', 'tuning-pack', 'civilization', 'ui-colors', 'player-colors') for t in types)
                 or len(set(types)) != len(types)):
-            raise ValueError('content_types must list distinct map, game-mode, tuning-pack, civilization or ui-colors components')
+            raise ValueError('content_types must list distinct map, game-mode, tuning-pack, civilization, ui-colors or player-colors components')
     validate_key(details['id'])
     for key, limit in [('name', 100), ('summary', 180), ('description', 8000), ('author', 100), ('changelog', 8000)]:
         value = details.get(key, '')
@@ -359,8 +359,16 @@ def legacy_catalog(result: dict) -> dict:
         and set(entry['details'].get('content_types', [])) <= {'map', 'game-mode', 'tuning-pack'}]}
 
 
+def v2_catalog(result: dict) -> dict:
+    """0.1.8/0.1.9 parse strict component enums before checking min_garrison."""
+    return {'schema': CATALOG_SCHEMA, 'mods': [entry for entry in result['mods']
+        if version_order(entry['details']['min_garrison']) < version_order('0.1.10')
+        and set(entry['roles']) <= {'map', 'tuning', 'civilization', 'ui-colors'}
+        and set(entry['details'].get('content_types', [])) <= {'map', 'game-mode', 'tuning-pack', 'civilization', 'ui-colors'}]}
+
+
 def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | None = None,
-          legacy_output: Path | None = None) -> dict:
+          legacy_output: Path | None = None, v2_output: Path | None = None) -> dict:
     """Write ``output`` (catalog.json) and ``covers/`` for the releases ``catalog.config.json`` lists."""
     config = read_config(root)
     github = github or GitHub(config['repository'], config.get('private', False))
@@ -415,8 +423,9 @@ def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | No
     result = {'schema': CATALOG_SCHEMA, 'mods': mods}
     encoded = (json.dumps(result, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
     legacy_encoded = (json.dumps(legacy_catalog(result), ensure_ascii=False, indent=2) + '\n').encode('utf-8')
-    if legacy_output is not None and legacy_output.resolve() == output.resolve():
-        raise ValueError('Full and legacy catalogs must use different paths')
+    destinations = [p.resolve() for p in (output, legacy_output, v2_output) if p is not None]
+    if len(destinations) != len(set(destinations)):
+        raise ValueError('Full and compatible catalogs must use different paths')
     if len(encoded) > 2 * 1024**2:
         raise ValueError('Catalog exceeds 2 MiB')
     # Covers first, then the index; a failure above keeps the last published index.
@@ -441,6 +450,15 @@ def build(root: Path, output: Path, *, branch: str = 'main', github: GitHub | No
             stream.write(legacy_encoded)
         try:
             os.replace(temporary, legacy_output)
+        finally:
+            temporary.unlink(missing_ok=True)
+    if v2_output is not None:
+        v2_output.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(dir=v2_output.parent, delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write((json.dumps(v2_catalog(result), ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
+        try:
+            os.replace(temporary, v2_output)
         finally:
             temporary.unlink(missing_ok=True)
     return result
@@ -481,6 +499,7 @@ if __name__ == '__main__':
     parser.add_argument('--root', type=Path, default=Path('.'))
     parser.add_argument('--output', type=Path, default=Path('catalog.json'))
     parser.add_argument('--legacy-output', type=Path, help='Optional 0.1.7-compatible index; excludes new wire fields')
+    parser.add_argument('--v2-output', type=Path, help='Optional 0.1.8/0.1.9-compatible index')
     parser.add_argument('--branch', default='main', help='the branch catalog.json and covers/ are published on')
     args = parser.parse_args()
-    build(args.root, args.output, branch=args.branch, legacy_output=args.legacy_output)
+    build(args.root, args.output, branch=args.branch, legacy_output=args.legacy_output, v2_output=args.v2_output)

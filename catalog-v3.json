@@ -1,0 +1,390 @@
+{
+  "schema": "garrison.catalog/v1",
+  "mods": [
+    {
+      "details": {
+        "id": "berbers",
+        "name": "Berbers",
+        "version": "0.1.1",
+        "summary": "The Berber Dynasties: tribal alliances, desert warriors and trade.",
+        "description": "Unite the tribes of the Maghreb through mobile armies, tribal alliances and trade. Establish Tribal Tents to develop Sanhaja, Zenata or Masmuda alliances, unlock specialist desert warriors and turn nearby military spending into free Villagers. Support your armies with cheaper economic buildings and Saharan Traders.",
+        "author": "hosein81 and marcokistan",
+        "updated": "2026-10-30",
+        "min_garrison": "0.1.9",
+        "content_types": [
+          "civilization"
+        ],
+        "changelog": "Catalog presentation release based on the author's Berbers 0.1.0. Adds historical period, difficulty, gameplay themes, six bonus rows, full credits and source provenance. The SGA, gameplay, art, audio and original flag cover are byte-identical to upstream 0.1.0. Requires Garrison 0.1.9+. Select Berbers / Standard / Tuning Pack: None. The author accepted trial.3 loading and basic play; the 0.1.0 flag revision still needs visual retesting. Broader mechanics, AI, repeated matches, save/load and replays remain unverified; multiplayer support is not claimed.",
+        "civilization": {
+          "period": "980 - 1549 CE",
+          "difficulty": 3,
+          "tagline": "Tribal Tents, Alliances, Mobile Armies",
+          "bonuses": [
+            "Tribal Tents: Build a Tribal Tent each Age to form Sanhaja, Zenata or Masmuda alliances and unlock their specialist units. Military spending near a Tent earns influence toward free Villagers.",
+            "Nomadic Trade Network: Town Centers, Markets, Mills, Lumber Camps, Mining Camps and Docks cost 10% less Wood.",
+            "Enduring Generations: From the Feudal Age onward, economic and military units gain 5% maximum Health. This bonus does not increase further with each Age.",
+            "Tribal Alliances: Sanhaja grants 20% more Wood on drop-off; Zenata grants 20% more Food; Masmuda grants 20% more Gold and Stone at the corresponding drop-off buildings.",
+            "Tribal Reforms and Dynasties: Research Tribal Reforms in the Castle Age and Dynasties in the Imperial Age to develop alliance units and technologies.",
+            "Unique Units: Tuareg Spearman, Mehari Rider, Sanhaja Camel Archer, Zenata Lancer, Masmuda Crossbowman and Almohad Handgunner. Saharan Traders support the trading economy."
+          ]
+        }
+      },
+      "bundle_key": "berbers",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/berbers-v0.1.1/berbers-0.1.1.zip",
+        "sha256": "dba912f5a0b3082af27e4f090b3e7fe34b57063e4129285d09284e654f4db13e",
+        "size": 615106849
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/ba06656f389d6e2dd54bcaa791935346c95d9e46a807d486c150e2abed0abca6.png",
+        "sha256": "ba06656f389d6e2dd54bcaa791935346c95d9e46a807d486c150e2abed0abca6",
+        "size": 2698977
+      },
+      "category": "civilizations"
+    },
+    {
+      "details": {
+        "id": "football_45_bundle",
+        "name": "OverFootball",
+        "version": "0.9.1",
+        "summary": "Stadium football with lobby teams and individual player control.",
+        "description": "Play stadium football with one to four participants per team. Each team has seven footballers; select a free teammate to control, then switch to another when needed.\n\nHow to launch\n1. Enable OverFootball in Garrison and press Play.\n2. In a custom lobby, select OverFootball map and OverFootball tuning. Keep the regular game mode.\n3. Choose Team 1 or Team 2 in the AoE IV lobby and close unused slots.\n4. Every human presses READY on the match setup screen.\n\nControls: right click to move; Q for a weak kick, W for a strong kick, E to boost, R to follow the ball, T to cheer.\n\nThe top Stamina Info button toggles both team panels. Stamina bars show the controlling participant's lobby colour. Team kits stay blue/red in team play; 1v1 keeps the chosen lobby colours.\n\nFor solo practice, use one human and three to seven AI slots. Practice participants yield control when you select their footballer.",
+        "author": "overbait",
+        "updated": "2026-10-12",
+        "min_garrison": "0.1.0",
+        "changelog": "Larger goals: expanded frames, animated nets and goal area. Net reactions remain inside the boards.",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "football_45_bundle",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.1/football_45_bundle-0.9.1.zip",
+        "sha256": "e291e4f3005ef90af3a8740eb8bede00de7973ad734c0864f75bfb1d1b697ab9",
+        "size": 87823991
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c.jpg",
+        "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
+        "size": 326561
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "game_enchancements_r06",
+        "name": "Game Enhancements+ (GE+)",
+        "version": "0.0.28",
+        "summary": "Bring battles to life with blood effects, impact-driven ragdolls and persistent battlefield remains.",
+        "author": "overbait",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.9",
+        "content_types": [
+          "game-mode",
+          "tuning-pack"
+        ],
+        "description": "Blood effects and impact-driven death physics for supported foot and mounted units, with battlefield blood and gradual corpse cleanup.\n\nChoose an ordinary map. Select Game Enhancements+ (GE+) as both the Tuning Pack and Game Mode. The mode exposes the current Standard win conditions and match options. Custom test maps are not included.\n\nRequires Garrison 0.1.9 and AoE IV 17.0.12182. Physics coverage includes the qualified Viking and Scots foot and horse units; unsupported rigs retain their normal death presentation.",
+        "changelog": "Game 17 compatibility: add 66 Viking and Scots foot/horse blueprint variants to the existing rig profiles. Restore all current Standard lobby options and localized win-condition labels. Preserve the accepted blood, impact and shared corpse-lifetime behavior. Requires the matching Garrison charge-death update for berserkers and gallowglasses."
+      },
+      "bundle_key": "game_enchancements_r06",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/game_enchancements_r06-v0.0.28/game_enchancements_r06-0.0.28.zip",
+        "sha256": "cd63f4fe5cabf1b9fbe2c0d599015e0d8b9ad0c67ffc1226ab0582c6dd841d9c",
+        "size": 3618153
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7.png",
+        "sha256": "34bb3f7e078877d3bc88d933130361e4c1da0cbf6f90879156695a682d59eca7",
+        "size": 1959688
+      },
+      "category": "enhancements"
+    },
+    {
+      "details": {
+        "id": "halloween_research_combat_02",
+        "name": "Zombie Plague",
+        "version": "0.23.0-rc.12",
+        "summary": "A zombie survival mod. Choose from five classes, fight through the hordes, recover the relic from a ruined cathedral, and escape by ship.",
+        "description": "A zombie survival mod. Choose from five classes, fight through the hordes, recover the relic from a ruined cathedral, and escape by ship.\n\nPlay as a Knight, Landsknecht, Crossbowman, Musketeer, or Monk — each with unique abilities and a different combat style.\n\nFeatures an improved combat system, custom zombie animations and sounds, blood effects, and physics-driven ragdolls.\n\nRequires the matching Garrison 0.1.7 runtime.\n\nTo play, select Zombie Plague Map and Zombie Plague Tuning together. Both are included in this package. Keep the map’s reserved AI slot.",
+        "author": "overbait",
+        "updated": "2026-10-26",
+        "min_garrison": "0.1.7",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
+        "changelog": "Release presentation refresh based on accepted RC11. Package naming and Garrison requirement updated; the cooked archive, gameplay, cover and internal identities are unchanged. Includes independent class readiness, bounded player conversion, delayed escape ending, looping selection idles and actor-relative selection lights."
+      },
+      "bundle_key": "halloween_research_combat_02",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/halloween_research_combat_02-v0.23.0-rc.12/halloween_research_combat_02-0.23.0-rc.12.zip",
+        "sha256": "3566f720c41a2b31cfefbc78c38880e48949d3a1b62a4e912ef25408ea3c1287",
+        "size": 238770366
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/b4950e3f46495146b9ba1033cfc03c70915ad44d1013049798d341419ebefe23.png",
+        "sha256": "b4950e3f46495146b9ba1033cfc03c70915ad44d1013049798d341419ebefe23",
+        "size": 903517
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "modding_showcase_full",
+        "name": "Modding Showcase",
+        "version": "0.1.1",
+        "summary": "Meet Shrek and ten Wizard Sheep, then build the Cow House on Dry Arabia.",
+        "author": "overbait",
+        "updated": "2026-10-03",
+        "min_garrison": "0.1.0",
+        "description": "A playable collection of custom characters and building art. At the centre of the map you receive Shrek, ten Wizard Sheep, a scout and a special builder. Select the builder, open the first-age build menu and use House to construct the Cow House. Shrek has manual movement, combat and a dance ability; the scenario does not issue automatic combat or dance orders.\n\nYour normal civilisation start is retained, with eight extra villagers, five spearmen, 600 food, 200 wood and 250 gold. With one human player, you control both the starting settlement and the centre group.\n\nHow to launch\n1. Enable Modding Showcase in Garrison and press Play.\n2. Create a solo custom match with one human and an AI.\n3. Map: ordinary Dry Arabia.\n4. Game Mode: Modding Showcase.\n5. Tuning Pack: Modding Showcase Tuning.\n6. Start the match and look at the centre of the map after a few seconds.\n\nThis bundle provides a Game Mode and Tuning Pack; do not choose a Crafted map. Enabling it in Garrison does not select these lobby fields. Use only this showcase bundle for the test. Town-centre recruitment of showcase units is not included.\n",
+        "changelog": "0.1.1 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
+        "content_types": [
+          "game-mode",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "modding_showcase_full",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/modding_showcase_full-v0.1.1/modding_showcase_full-0.1.1.zip",
+        "sha256": "9d3dd5e4fb1b150bba0feb21b6d89cd3b297ff7e4025e1e13f5400fbc619c90a",
+        "size": 45139411
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9.jpg",
+        "sha256": "0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9",
+        "size": 217700
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "persians_independent",
+        "name": "Persians",
+        "version": "0.1.0",
+        "summary": "Iranian dynasties, Divans and trade shape the Persian economy and army.",
+        "min_garrison": "0.1.8",
+        "content_types": [
+          "civilization"
+        ],
+        "updated": "2026-10-29",
+        "author": "hosein81 and chilly5",
+        "description": "The Persians build their strength through Iranian dynasties, Divans and trade. Advancing a dynasty upgrades the army, while Divans oversee nearby economic or military buildings. Caravanserais protect passing Traders and speed their journeys. Specialized troops reward careful army composition and the right matchups.",
+        "changelog": "First independent Garrison release. Separate civilization selection with Tuning Pack = None; native technology tree, Overview bonuses and flag presentation. Accepted gameplay, art and audio archive preserved unchanged. Known source model and texture defects remain under author development.",
+        "civilization": {
+          "period": "934 - 1629 CE",
+          "difficulty": 3,
+          "tagline": "Iranian Dynasties, Divans, Trade",
+          "bonuses": [
+            "Advance Iranian dynasties to unlock army veterancy.",
+            "Divans supervise nearby economic or military buildings.",
+            "Caravanserais improve the protection and speed of passing Traders.",
+            "Specialized unique units excel against their intended counters.",
+            "Mills create orchards near Berries; Villagers gather Berries faster.",
+            "Daylamite, Qizilbash, Savar, Assassin and Zamburak."
+          ]
+        }
+      },
+      "bundle_key": "persians_independent",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/persians_independent-v0.1.0/persians_independent-0.1.0.zip",
+        "sha256": "1dea196fb58b43a2c5d9d469e2e21201171ad95ef513709c9e424d3ce6af6282",
+        "size": 261415373
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/3a71e614c2dea75a0b2e3fe7ed72f773af9222170bc9db576b0d87aadb1f16a5.png",
+        "sha256": "3a71e614c2dea75a0b2e3fe7ed72f773af9222170bc9db576b0d87aadb1f16a5",
+        "size": 220637
+      },
+      "category": "civilizations"
+    },
+    {
+      "details": {
+        "id": "player_colors",
+        "name": "In-game player colors",
+        "version": "0.1.0",
+        "author": "overbait",
+        "updated": "2026-10-31",
+        "min_garrison": "0.1.10",
+        "summary": "Choose your own colors for you, your allies and your opponents.",
+        "description": "Create a player palette with a segmented color wheel and lightness, chroma and hue sliders. Choose 1v1, 2v2, 3v3, 4v4 or eight-player FFA. Circle 1 always follows you, regardless of lobby order. Team harmony rules arrange both sides; pin or drag any player color to customize it. With no circle selected, sliders adjust all colors. With a circle selected, they adjust only that player.\n\nEnabled applies colors to models, health bars, names, silhouettes, minimap marks and tribute names. Turning it off restores the original player colors. Compatible with In-game UI Colors. Removing or updating the mod preserves your saved palette.\n\nRequires the complete Garrison 0.1.10 player distribution and game 17.0.12182. Launch a local single-player match through Garrison and use unique player colors. No lobby Tuning Pack selection is needed. This feature has not been qualified for multiplayer.",
+        "content_types": [
+          "player-colors"
+        ],
+        "changelog": "First catalog release: team and FFA palettes, live color synchronization, preserved preferences and standard card actions."
+      },
+      "bundle_key": "player_colors",
+      "roles": [
+        "player-colors"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/player_colors-v0.1.0/player_colors-0.1.0.zip",
+        "sha256": "4966651b9d4a16c9310566b2e412c9d524f3f7ddc53bba48af8f2da0e163e9ea",
+        "size": 2118
+      },
+      "category": "enhancements"
+    },
+    {
+      "details": {
+        "id": "ram_napkin_race",
+        "name": "Ram Napkin Race",
+        "version": "0.9.9",
+        "summary": "Drive colourful rams across a rolling road-carpet arena.",
+        "author": "overbait",
+        "updated": "2026-10-03",
+        "min_garrison": "0.1.0",
+        "description": "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: right click to drive; S to brake; Q to strike. Select your ram and press W to follow your ram or E to follow the active ram. Press the same key again for free camera.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
+        "changelog": "0.9.9 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ]
+      },
+      "bundle_key": "ram_napkin_race",
+      "roles": [
+        "map",
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ram_napkin_race-v0.9.9/ram_napkin_race-0.9.9.zip",
+        "sha256": "4b300fefa7c1465557ffd062d8a3fe94691459b31129c783e9d08d74a461e3ed",
+        "size": 5450934
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29.jpg",
+        "sha256": "58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29",
+        "size": 316699
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "santa_level_1_movement_lab",
+        "name": "Santa Claus in Trouble",
+        "version": "0.1.0-rc.14",
+        "summary": "Help Santa collect presents across ten festive platforming levels with double jumps and moving platforms.",
+        "updated": "2026-10-26",
+        "min_garrison": "0.1.7",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
+        "author": "overbait",
+        "description": "A festive platforming adventure. Help Santa collect presents across ten levels, avoid enemies, and reach the exit.\n\nDouble-jump across gaps, ride moving platforms, and explore each level for missing gifts.\n\nThis is a non-commercial, fan-made mod. All character models and textures used in this mod belong to Joymania Entertainment from the original game Santa Claus in Trouble (2002). All rights belong to their respective owners.\n\nRequires the matching Garrison 0.1.7 runtime.\n\nTo play, select Santa in Trouble Map and Santa in Trouble Tuning together. Both are included in this package.",
+        "changelog": "Release presentation refresh based on RC12. Replaced the old prototype Tuning description and updated package naming and Garrison requirement. All gameplay, movement, input, level, animation and audio files are unchanged. RC14 adds the author-approved non-commercial fan-mod notice and original character-model/texture attribution; the cooked archive is identical to RC13."
+      },
+      "bundle_key": "santa_level_1_movement_lab",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/santa_level_1_movement_lab-v0.1.0-rc.14/santa_level_1_movement_lab-0.1.0-rc.14.zip",
+        "sha256": "422587ee742fbd247dca6eca7095f28adb544906edf3fd37522ce695024f3568",
+        "size": 86101468
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/b0cf8bfa1d9b4ddb221d6cb1f96cb1720d82f54b799f81f262c23ca87e229fe4.png",
+        "sha256": "b0cf8bfa1d9b4ddb221d6cb1f96cb1720d82f54b799f81f262c23ca87e229fe4",
+        "size": 762027
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
+        "id": "ui_colors",
+        "name": "In-game UI Colors",
+        "version": "0.1.1",
+        "summary": "Change the interface palette.",
+        "description": "Choose from 39 interface palettes, including eight lobby colors and two bright accent sets. Follow matches your lobby color; Random chooses a palette. Switch colors live in a Garrison session, or click the selected palette again to restore the standard interface.",
+        "author": "overbait",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.9",
+        "content_types": [
+          "ui-colors"
+        ],
+        "changelog": "Eight basic colors, Electric and Ember bright accents, and more distinct hue/saturation roles. Follow and Random require Garrison 0.1.9. No files are written to the Steam installation."
+      },
+      "bundle_key": "ui_colors",
+      "roles": [
+        "ui-colors"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ui_colors-v0.1.1/ui_colors-0.1.1.zip",
+        "sha256": "0397fa1eda0ac04e5e9438d20df5a8dbd0136076b33addf8f408c26aaea046ac",
+        "size": 3692380
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/aeecf56d7162bd2a09c849bbe06be12be6bb3e89fd2138d87e105ae7c1a229ba.png",
+        "sha256": "aeecf56d7162bd2a09c849bbe06be12be6bb3e89fd2138d87e105ae7c1a229ba",
+        "size": 3178538
+      },
+      "category": "enhancements"
+    },
+    {
+      "details": {
+        "id": "vietnamese_independent",
+        "version": "0.1.0",
+        "summary": "Wear down enemies with light infantry, traps and poisoned arrows, secure the map through Hideouts and tunnels, then field powerful gunpowder units.",
+        "author": "hosein81 and chilly5",
+        "updated": "2026-10-29",
+        "min_garrison": "0.1.8",
+        "content_types": [
+          "civilization"
+        ],
+        "name": "Vietnamese",
+        "description": "The Vietnamese wear down stronger armies through guerrilla warfare, traps and poisoned arrows. Hideouts secure resources and connect a network of tunnels, while Worker Elephants carry Villagers between gathering sites. Water Buffalo build Rice Paddies for food and wood, supporting a late-game army of powerful gunpowder units.",
+        "civilization": {
+          "period": "968 - 1592 CE",
+          "difficulty": 2,
+          "tagline": "Guerrilla Warfare, Traps, Gunpowder",
+          "bonuses": [
+            "Water Buffalo build free Rice Paddies. One Villager gathers food while one Buffalo produces wood.",
+            "Hideouts accept all four resources and can be fortified.",
+            "Light infantry build free Bamboo Stake Traps.",
+            "Lam Sơn Skirmishers counter ranged units; Heavy Arquebusiers fire penetrating shots.",
+            "Nỏ thần fire scattered volleys of bolts.",
+            "Town Center-rooted tunnels transport eligible land units between connected buildings.",
+            "Unique landmarks provide free Buffalo, economic stealth and Royal Elephants."
+          ]
+        },
+        "changelog": "First independent Garrison release. Separate civilization selection with Tuning Pack = None; native technology tree, Overview bonuses and flag presentation. Accepted gameplay, art and audio archive preserved unchanged. Known source model and texture defects remain under author development."
+      },
+      "bundle_key": "vietnamese_independent",
+      "roles": [
+        "civilization"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/vietnamese_independent-v0.1.0/vietnamese_independent-0.1.0.zip",
+        "sha256": "fb20784415e4c59800978af766a8df077d9a458bffffb9d08701cb465f1eab6a",
+        "size": 228737665
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/a096f6c79395f6242d657e5fd9cba6a5eebd3850fd66c5d646f9ba5086b258d6.png",
+        "sha256": "a096f6c79395f6242d657e5fd9cba6a5eebd3850fd66c5d646f9ba5086b258d6",
+        "size": 3499633
+      },
+      "category": "civilizations"
+    }
+  ]
+}
