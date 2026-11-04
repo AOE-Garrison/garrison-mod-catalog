@@ -47,6 +47,38 @@
     },
     {
       "details": {
+        "id": "brass_birmingham_p0",
+        "name": "Brass: Birmingham",
+        "version": "0.0.43-mp16",
+        "summary": "An economic strategy board game for 1–4 players. Play solo or with friends and add AI opponents if you like.",
+        "author": "Local prototype",
+        "updated": "2026-11-05",
+        "min_garrison": "0.1.14",
+        "content_types": [
+          "map",
+          "tuning-pack"
+        ],
+        "description": "Build industries, sell goods and connect towns by canal and rail in England’s West Midlands during the Industrial Revolution.\n\nIn the Age of Empires IV custom game lobby, select the “Brass Birmingham Board” crafted map and the “Brass Birmingham Tuning” tuning pack. Choose a standard game mode.\n\nSet the number of AI opponents in the lobby before starting the match. Assign one open slot to each AI opponent and close any unused slots. For example, for two human players and one AI, set the third slot to AI and close the fourth.\n\nThe board, cards, tiles and rulebook come from Tabletop Simulator (TTS). These Brass: Birmingham assets belong to Roxley Games.\n\nOfficial English rulebook (PDF)\nhttps://cdn.shopify.com/s/files/1/0246/2190/8043/files/Brass-Birmingham-Rulebook.pdf?v=1758826281",
+        "changelog": "The crafted map now appears as Brass Birmingham Board and the tuning pack as Brass Birmingham Tuning in the custom game lobby."
+      },
+      "bundle_key": "brass_birmingham_p0",
+      "roles": [
+        "tuning"
+      ],
+      "package": {
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/brass_birmingham_p0-v0.0.43-mp16/brass_birmingham_p0-0.0.43-mp16.zip",
+        "sha256": "9bcd11de6c002cc992d8b2c16efa21ed4fdbfb680649d45a3e7ff8e0b47c8ce6",
+        "size": 294792316
+      },
+      "cover": {
+        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/ea4d144061a918d76c6d30e5937428a7080c1cf327a4130fa6eeeceb42d2ec0b.png",
+        "sha256": "ea4d144061a918d76c6d30e5937428a7080c1cf327a4130fa6eeeceb42d2ec0b",
+        "size": 744147
+      },
+      "category": "games-scenarios"
+    },
+    {
+      "details": {
         "id": "football_45_bundle",
         "name": "OverFootball",
         "version": "0.9.1",
