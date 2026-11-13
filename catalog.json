@@ -3,39 +3,6 @@
   "mods": [
     {
       "details": {
-        "id": "football_45_bundle",
-        "name": "OverFootball",
-        "version": "0.9.1",
-        "summary": "Stadium football with lobby teams and individual player control.",
-        "description": "Play stadium football with one to four participants per team. Each team has seven footballers; select a free teammate to control, then switch to another when needed.\n\nHow to launch\n1. Enable OverFootball in Garrison and press Play.\n2. In a custom lobby, select OverFootball map and OverFootball tuning. Keep the regular game mode.\n3. Choose Team 1 or Team 2 in the AoE IV lobby and close unused slots.\n4. Every human presses READY on the match setup screen.\n\nControls: right click to move; Q for a weak kick, W for a strong kick, E to boost, R to follow the ball, T to cheer.\n\nThe top Stamina Info button toggles both team panels. Stamina bars show the controlling participant's lobby colour. Team kits stay blue/red in team play; 1v1 keeps the chosen lobby colours.\n\nFor solo practice, use one human and three to seven AI slots. Practice participants yield control when you select their footballer.",
-        "author": "overbait",
-        "updated": "2026-10-12",
-        "min_garrison": "0.1.0",
-        "changelog": "Larger goals: expanded frames, animated nets and goal area. Net reactions remain inside the boards.",
-        "content_types": [
-          "map",
-          "tuning-pack"
-        ]
-      },
-      "bundle_key": "football_45_bundle",
-      "roles": [
-        "map",
-        "tuning"
-      ],
-      "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/football_45_bundle-v0.9.1/football_45_bundle-0.9.1.zip",
-        "sha256": "e291e4f3005ef90af3a8740eb8bede00de7973ad734c0864f75bfb1d1b697ab9",
-        "size": 87823991
-      },
-      "cover": {
-        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c.jpg",
-        "sha256": "bf4af4ef381cd77ce4d8fa8c281ec78530bb34dca482fd00cfe58af3f46eb84c",
-        "size": 326561
-      },
-      "category": "games-scenarios"
-    },
-    {
-      "details": {
         "id": "halloween_research_combat_02",
         "name": "Zombie Plague",
         "version": "0.23.0-rc.12",
@@ -68,48 +35,15 @@
     },
     {
       "details": {
-        "id": "modding_showcase_full",
-        "name": "Modding Showcase",
-        "version": "0.1.1",
-        "summary": "Meet Shrek and ten Wizard Sheep, then build the Cow House on Dry Arabia.",
-        "author": "overbait",
-        "updated": "2026-10-03",
-        "min_garrison": "0.1.0",
-        "description": "A playable collection of custom characters and building art. At the centre of the map you receive Shrek, ten Wizard Sheep, a scout and a special builder. Select the builder, open the first-age build menu and use House to construct the Cow House. Shrek has manual movement, combat and a dance ability; the scenario does not issue automatic combat or dance orders.\n\nYour normal civilisation start is retained, with eight extra villagers, five spearmen, 600 food, 200 wood and 250 gold. With one human player, you control both the starting settlement and the centre group.\n\nHow to launch\n1. Enable Modding Showcase in Garrison and press Play.\n2. Create a solo custom match with one human and an AI.\n3. Map: ordinary Dry Arabia.\n4. Game Mode: Modding Showcase.\n5. Tuning Pack: Modding Showcase Tuning.\n6. Start the match and look at the centre of the map after a few seconds.\n\nThis bundle provides a Game Mode and Tuning Pack; do not choose a Crafted map. Enabling it in Garrison does not select these lobby fields. Use only this showcase bundle for the test. Town-centre recruitment of showcase units is not included.\n",
-        "changelog": "0.1.1 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
-        "content_types": [
-          "game-mode",
-          "tuning-pack"
-        ]
-      },
-      "bundle_key": "modding_showcase_full",
-      "roles": [
-        "map",
-        "tuning"
-      ],
-      "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/modding_showcase_full-v0.1.1/modding_showcase_full-0.1.1.zip",
-        "sha256": "9d3dd5e4fb1b150bba0feb21b6d89cd3b297ff7e4025e1e13f5400fbc619c90a",
-        "size": 45139411
-      },
-      "cover": {
-        "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9.jpg",
-        "sha256": "0ced322589505a9b55ef1cfe217457b5c5012e4cc1d49b7d8198145de58117b9",
-        "size": 217700
-      },
-      "category": "games-scenarios"
-    },
-    {
-      "details": {
         "id": "ram_napkin_race",
         "name": "Ram Napkin Race",
-        "version": "0.9.9",
+        "version": "0.9.10",
         "summary": "Drive colourful rams across a rolling road-carpet arena.",
-        "author": "overbait",
-        "updated": "2026-10-03",
-        "min_garrison": "0.1.0",
         "description": "How to launch\n1. Enable Ram Napkin Race in Garrison and press Play.\n2. Open a custom lobby.\n3. Map (Crafted): Ram Napkin Race map.\n4. Tuning Pack: Ram Napkin Race tuning.\n5. Keep the regular game mode; no extra Game Mode is needed.\nControls: right click to drive; S to brake; Q to strike. Select your ram and press W to follow your ram or E to follow the active ram. Press the same key again for free camera.\n\nEnabling the bundle does not select its map or tuning in the lobby.",
-        "changelog": "0.9.9 / 2026-10-03\nUpdated packaging to garrison.json with the existing archive keys, launch instructions and cover. Cooked game archives are preserved.",
+        "author": "overbait",
+        "updated": "2026-11-13",
+        "min_garrison": "0.1.0",
+        "changelog": "The race plays its own soundtrack and silences the native civilization score during the race. Normal music resumes after the race.",
         "content_types": [
           "map",
           "tuning-pack"
@@ -121,9 +55,9 @@
         "tuning"
       ],
       "package": {
-        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ram_napkin_race-v0.9.9/ram_napkin_race-0.9.9.zip",
-        "sha256": "4b300fefa7c1465557ffd062d8a3fe94691459b31129c783e9d08d74a461e3ed",
-        "size": 5450934
+        "url": "https://github.com/AOE-Garrison/garrison-mod-catalog/releases/download/ram_napkin_race-v0.9.10/ram_napkin_race-0.9.10.zip",
+        "sha256": "188f1e9cc7bf2dc61090299218f1629be9c4804437d6c904bf08d76ad3fe5088",
+        "size": 9123112
       },
       "cover": {
         "url": "https://raw.githubusercontent.com/AOE-Garrison/garrison-mod-catalog/main/covers/58d6299fe2b8b61fffe1bb1fa4ce7e1cb15af14d274df959ae0af99647112c29.jpg",
